@@ -1,0 +1,537 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6CD061E61E811EB80001FC76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD061E51E811EB80001FC76 /* AppDelegate.swift */; };
+		6CD061E81E811EB80001FC76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD061E71E811EB80001FC76 /* ViewController.swift */; };
+		6CD061EB1E811EB80001FC76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CD061E91E811EB80001FC76 /* Main.storyboard */; };
+		6CD061ED1E811EB80001FC76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CD061EC1E811EB80001FC76 /* Assets.xcassets */; };
+		6CD061F01E811EB80001FC76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6CD061EE1E811EB80001FC76 /* LaunchScreen.storyboard */; };
+		6CD061FB1E811EB80001FC76 /* __demoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD061FA1E811EB80001FC76 /* __demoTests.swift */; };
+		6CD062061E811EB80001FC76 /* __demoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD062051E811EB80001FC76 /* __demoUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6CD061F71E811EB80001FC76 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CD061DA1E811EB80001FC76 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6CD061E11E811EB80001FC76;
+			remoteInfo = "直播demo";
+		};
+		6CD062021E811EB80001FC76 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6CD061DA1E811EB80001FC76 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6CD061E11E811EB80001FC76;
+			remoteInfo = "直播demo";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6CD061E21E811EB80001FC76 /* 直播demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "直播demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CD061E51E811EB80001FC76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6CD061E71E811EB80001FC76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6CD061EA1E811EB80001FC76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6CD061EC1E811EB80001FC76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6CD061EF1E811EB80001FC76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6CD061F11E811EB80001FC76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6CD061F61E811EB80001FC76 /* 直播demoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "直播demoTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CD061FA1E811EB80001FC76 /* __demoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __demoTests.swift; sourceTree = "<group>"; };
+		6CD061FC1E811EB80001FC76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6CD062011E811EB80001FC76 /* 直播demoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "直播demoUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6CD062051E811EB80001FC76 /* __demoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = __demoUITests.swift; sourceTree = "<group>"; };
+		6CD062071E811EB80001FC76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6CD061DF1E811EB80001FC76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CD061F31E811EB80001FC76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CD061FE1E811EB80001FC76 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6CD061D91E811EB80001FC76 = {
+			isa = PBXGroup;
+			children = (
+				6CD061E41E811EB80001FC76 /* 直播demo */,
+				6CD061F91E811EB80001FC76 /* 直播demoTests */,
+				6CD062041E811EB80001FC76 /* 直播demoUITests */,
+				6CD061E31E811EB80001FC76 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6CD061E31E811EB80001FC76 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6CD061E21E811EB80001FC76 /* 直播demo.app */,
+				6CD061F61E811EB80001FC76 /* 直播demoTests.xctest */,
+				6CD062011E811EB80001FC76 /* 直播demoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6CD061E41E811EB80001FC76 /* 直播demo */ = {
+			isa = PBXGroup;
+			children = (
+				6CD061E51E811EB80001FC76 /* AppDelegate.swift */,
+				6CD061E71E811EB80001FC76 /* ViewController.swift */,
+				6CD061E91E811EB80001FC76 /* Main.storyboard */,
+				6CD061EC1E811EB80001FC76 /* Assets.xcassets */,
+				6CD061EE1E811EB80001FC76 /* LaunchScreen.storyboard */,
+				6CD061F11E811EB80001FC76 /* Info.plist */,
+			);
+			path = "直播demo";
+			sourceTree = "<group>";
+		};
+		6CD061F91E811EB80001FC76 /* 直播demoTests */ = {
+			isa = PBXGroup;
+			children = (
+				6CD061FA1E811EB80001FC76 /* __demoTests.swift */,
+				6CD061FC1E811EB80001FC76 /* Info.plist */,
+			);
+			path = "直播demoTests";
+			sourceTree = "<group>";
+		};
+		6CD062041E811EB80001FC76 /* 直播demoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6CD062051E811EB80001FC76 /* __demoUITests.swift */,
+				6CD062071E811EB80001FC76 /* Info.plist */,
+			);
+			path = "直播demoUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6CD061E11E811EB80001FC76 /* 直播demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CD0620A1E811EB80001FC76 /* Build configuration list for PBXNativeTarget "直播demo" */;
+			buildPhases = (
+				6CD061DE1E811EB80001FC76 /* Sources */,
+				6CD061DF1E811EB80001FC76 /* Frameworks */,
+				6CD061E01E811EB80001FC76 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "直播demo";
+			productName = "直播demo";
+			productReference = 6CD061E21E811EB80001FC76 /* 直播demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6CD061F51E811EB80001FC76 /* 直播demoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CD0620D1E811EB80001FC76 /* Build configuration list for PBXNativeTarget "直播demoTests" */;
+			buildPhases = (
+				6CD061F21E811EB80001FC76 /* Sources */,
+				6CD061F31E811EB80001FC76 /* Frameworks */,
+				6CD061F41E811EB80001FC76 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6CD061F81E811EB80001FC76 /* PBXTargetDependency */,
+			);
+			name = "直播demoTests";
+			productName = "直播demoTests";
+			productReference = 6CD061F61E811EB80001FC76 /* 直播demoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6CD062001E811EB80001FC76 /* 直播demoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6CD062101E811EB80001FC76 /* Build configuration list for PBXNativeTarget "直播demoUITests" */;
+			buildPhases = (
+				6CD061FD1E811EB80001FC76 /* Sources */,
+				6CD061FE1E811EB80001FC76 /* Frameworks */,
+				6CD061FF1E811EB80001FC76 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6CD062031E811EB80001FC76 /* PBXTargetDependency */,
+			);
+			name = "直播demoUITests";
+			productName = "直播demoUITests";
+			productReference = 6CD062011E811EB80001FC76 /* 直播demoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6CD061DA1E811EB80001FC76 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Shaoting Zhou";
+				TargetAttributes = {
+					6CD061E11E811EB80001FC76 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = U4629HP3VA;
+						ProvisioningStyle = Automatic;
+					};
+					6CD061F51E811EB80001FC76 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = U4629HP3VA;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6CD061E11E811EB80001FC76;
+					};
+					6CD062001E811EB80001FC76 = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = U4629HP3VA;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 6CD061E11E811EB80001FC76;
+					};
+				};
+			};
+			buildConfigurationList = 6CD061DD1E811EB80001FC76 /* Build configuration list for PBXProject "直播demo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6CD061D91E811EB80001FC76;
+			productRefGroup = 6CD061E31E811EB80001FC76 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6CD061E11E811EB80001FC76 /* 直播demo */,
+				6CD061F51E811EB80001FC76 /* 直播demoTests */,
+				6CD062001E811EB80001FC76 /* 直播demoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6CD061E01E811EB80001FC76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CD061F01E811EB80001FC76 /* LaunchScreen.storyboard in Resources */,
+				6CD061ED1E811EB80001FC76 /* Assets.xcassets in Resources */,
+				6CD061EB1E811EB80001FC76 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CD061F41E811EB80001FC76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CD061FF1E811EB80001FC76 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6CD061DE1E811EB80001FC76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CD061E81E811EB80001FC76 /* ViewController.swift in Sources */,
+				6CD061E61E811EB80001FC76 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CD061F21E811EB80001FC76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CD061FB1E811EB80001FC76 /* __demoTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6CD061FD1E811EB80001FC76 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6CD062061E811EB80001FC76 /* __demoUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6CD061F81E811EB80001FC76 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6CD061E11E811EB80001FC76 /* 直播demo */;
+			targetProxy = 6CD061F71E811EB80001FC76 /* PBXContainerItemProxy */;
+		};
+		6CD062031E811EB80001FC76 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6CD061E11E811EB80001FC76 /* 直播demo */;
+			targetProxy = 6CD062021E811EB80001FC76 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6CD061E91E811EB80001FC76 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6CD061EA1E811EB80001FC76 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6CD061EE1E811EB80001FC76 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6CD061EF1E811EB80001FC76 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6CD062081E811EB80001FC76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6CD062091E811EB80001FC76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6CD0620B1E811EB80001FC76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = U4629HP3VA;
+				INFOPLIST_FILE = "直播demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "--.--demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		6CD0620C1E811EB80001FC76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = U4629HP3VA;
+				INFOPLIST_FILE = "直播demo/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "--.--demo";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		6CD0620E1E811EB80001FC76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = U4629HP3VA;
+				INFOPLIST_FILE = "直播demoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "--.--demoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/直播demo.app/直播demo";
+			};
+			name = Debug;
+		};
+		6CD0620F1E811EB80001FC76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = U4629HP3VA;
+				INFOPLIST_FILE = "直播demoTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "--.--demoTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/直播demo.app/直播demo";
+			};
+			name = Release;
+		};
+		6CD062111E811EB80001FC76 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = U4629HP3VA;
+				INFOPLIST_FILE = "直播demoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "--.--demoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "直播demo";
+			};
+			name = Debug;
+		};
+		6CD062121E811EB80001FC76 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = U4629HP3VA;
+				INFOPLIST_FILE = "直播demoUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "--.--demoUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "直播demo";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6CD061DD1E811EB80001FC76 /* Build configuration list for PBXProject "直播demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CD062081E811EB80001FC76 /* Debug */,
+				6CD062091E811EB80001FC76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6CD0620A1E811EB80001FC76 /* Build configuration list for PBXNativeTarget "直播demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CD0620B1E811EB80001FC76 /* Debug */,
+				6CD0620C1E811EB80001FC76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6CD0620D1E811EB80001FC76 /* Build configuration list for PBXNativeTarget "直播demoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CD0620E1E811EB80001FC76 /* Debug */,
+				6CD0620F1E811EB80001FC76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		6CD062101E811EB80001FC76 /* Build configuration list for PBXNativeTarget "直播demoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6CD062111E811EB80001FC76 /* Debug */,
+				6CD062121E811EB80001FC76 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6CD061DA1E811EB80001FC76 /* Project object */;
+}

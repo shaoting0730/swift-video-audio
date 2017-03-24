@@ -1,0 +1,6 @@
+framework module Pods___demo {
+  umbrella header "Pods-直播demo-umbrella.h"
+
+  export *
+  module * { export * }
+}

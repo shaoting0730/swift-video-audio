@@ -107,14 +107,14 @@ class VideoViewController: UIViewController {
         let url = URL.init(string: stream_addr!)
         ijkPlayVC = IJKFFMoviePlayerController.init(contentURL: url, with: nil)
         ijkPlayVC.view.frame = UIScreen.main.bounds
-        if !ijkPlayVC.isPlaying() {
         self.view.addSubview(ijkPlayVC.view)
-            ijkPlayVC.prepareToPlay()
-        }
+        ijkPlayVC.prepareToPlay()
+        
          //返回按钮
         view.insertSubview(backBtn, aboveSubview: ijkPlayVC.view)
         view.insertSubview(heartBtn, aboveSubview: ijkPlayVC.view)
         view.insertSubview(giftBtn, aboveSubview: ijkPlayVC.view)
+
     }
     //点击控件约束
     func  addCons() {

@@ -65,8 +65,10 @@ extension OneViewController:UITableViewDelegate,UITableViewDataSource{
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
         let  stream_addr = oneModel[indexPath.row].stream_addr
+        let portrait = oneModel[indexPath.row].user?.portrait
         let videoVC = VideoViewController()
         videoVC.stream_addr = stream_addr
+        videoVC.portrait = portrait
         self.present(videoVC, animated: true, completion: nil)
     }
 

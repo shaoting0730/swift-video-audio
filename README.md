@@ -1,9 +1,9 @@
  本项目采用swift3.0所写,适配iOS9.0+,所有界面均采用代码布局,第一个tab写的是简单直播,传统MVC模式,第二个tab写的是简单网络音乐播放器.传说MVVM模式     <br/>
  ___
- #采用的第三方<br/>
+ #采用的第三方 <br/>
     pod 'SDWebImage', '~> 3.8.2' <br/>
-    pod 'Alamofire', '~> 4.2.0'<br/>
-    pod 'SnapKit', '~> 3.1.2'<br/>
+    pod 'Alamofire', '~> 4.2.0' <br/>
+    pod 'SnapKit', '~> 3.1.2' <br/>
  ___
  #简单直播 <br/>
    直播框架采用 [ Bilibili的ijkplayer ]( https://github.com/Bilibili/ijkplayer)  <br/>
@@ -25,5 +25,7 @@
  ![image](https://github.com/pheromone/swift3.0-video-audio/blob/master/video2.png) <br/>
  ![image](https://github.com/pheromone/swift3.0-video-audio/blob/master/video3.png) <br/>
  ___
+ <br/>
+ 
   #简单网络音乐播放器 <br/>
   - [] 正在撸代码 <br/>

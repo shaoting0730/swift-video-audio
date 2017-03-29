@@ -11,10 +11,12 @@ private let TwoTableViewCellIdentifie = "TwoTableViewCellIdentifie"
 class TwoViewController: UIViewController {
     let viewModel = TwoViewModel()
     var twoModel = [TwoModel]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutUI()
     }
+
     func layoutUI(){
         let tableView = UITableView.init(frame: self.view.bounds)
         tableView.delegate = viewModel
@@ -27,12 +29,17 @@ class TwoViewController: UIViewController {
         viewModel.cellRender = { indexPath,tablleView in
             let cell = tablleView.dequeueReusableCell(withIdentifier: TwoTableViewCellIdentifie, for: indexPath as IndexPath) as! TwoTableViewCell
             
-            cell.textLabel?.text = self.twoModel[indexPath.row].author
+            let author =   self.twoModel[indexPath.row].author!
+            let title = self.twoModel[indexPath.row].title!
+            cell.titleAuthorLabel.text = title + "--" + author
+            
             return cell
         }
         // cell点击事件
         viewModel.cellDidSelect = { indexPath,tablleView in
-            
+            let  playerVC = PlayerViewController()
+            playerVC.song_id = self.twoModel[indexPath.row].song_id
+             self.navigationController?.pushViewController(playerVC, animated: false)
         }
         //获取数据
         TwoModel.loadData { (data) in

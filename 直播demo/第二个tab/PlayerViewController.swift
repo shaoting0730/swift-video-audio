@@ -10,7 +10,18 @@ import UIKit
 import SnapKit
 
 class PlayerViewController: UIViewController {
-    
+    var song_id:String!
+    //虚化
+    private lazy var viewBgImg:UIImageView = {
+        let  imgView = UIImageView.init(frame: UIScreen.main.bounds)
+        return imgView
+    }()
+    private lazy var viewBg:UIVisualEffectView = {
+        let blurEffect = UIBlurEffect.init(style: .light)
+        let effetView = UIVisualEffectView.init(effect: blurEffect)
+        effetView.frame = UIScreen.main.bounds
+        return effetView
+    }()
     private lazy var needle:UIImageView = {
         let imgView = UIImageView.init(frame: CGRect.zero)
         imgView.image = #imageLiteral(resourceName: "CD_needle")
@@ -46,7 +57,6 @@ class PlayerViewController: UIViewController {
     }()
     private lazy var singerImg:UIImageView = {
          let imgView = UIImageView.init(frame: CGRect.zero)
-        imgView.image  = #imageLiteral(resourceName: "green")
         imgView.layer.masksToBounds = true
         imgView.layer.cornerRadius = 155/2
         return imgView
@@ -64,12 +74,25 @@ class PlayerViewController: UIViewController {
         print(#function)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         addSubView()
         addCons()
+        NetWorkManager.post(url: "http://tingapi.ting.baidu.com/v1/restserver/ting?method=baidu.ting.song.play&songid=" + song_id) { (data) in
+            let  songinfoDic = data["songinfo"] as! [String:AnyObject]
+            self.singerImg.sd_setImage(with: URL.init(string: songinfoDic["pic_small"] as! String))
+            self.viewBgImg.sd_setImage(with: URL.init(string: songinfoDic["pic_big"] as! String))
+        }
+       
     }
     func addSubView(){
+        //背景虚化
+        viewBgImg.addSubview(viewBg)
+        view.addSubview(viewBgImg)
         view.addSubview(song_bg)
         view.addSubview(needle)
         view.addSubview(bottomView)
@@ -93,23 +116,23 @@ class PlayerViewController: UIViewController {
         bottomView.snp.makeConstraints { (make) in
             make.width.equalTo(view.bounds.width)
             make.height.equalTo(50)
-            make.bottomMargin.equalTo(self.view.snp.bottom).offset(-50)
+            make.bottomMargin.equalTo(self.view.snp.bottom)
         }
         let noSoundC =  self.view.center.x/2
         noSoundBtn.snp.makeConstraints { (make) in
             make.width.height.equalTo(30)
-            make.bottomMargin.equalTo(self.view.snp.bottom).offset(-60)
+            make.bottomMargin.equalTo(self.view.snp.bottom).offset(-10)
             make.centerX.equalTo(noSoundC)
         }
         playBtn.snp.makeConstraints { (make) in
             make.width.height.equalTo(30)
-            make.bottomMargin.equalTo(self.view.snp.bottom).offset(-60)
+            make.bottomMargin.equalTo(self.view.snp.bottom).offset(-10)
             make.centerX.equalTo(view.snp.centerX)
         }
         let nextBtnC = self.view.center.x * 3/2
          nextBtn.snp.makeConstraints { (make) in
             make.width.height.equalTo(30)
-            make.bottomMargin.equalTo(self.view.snp.bottom).offset(-60)
+            make.bottomMargin.equalTo(self.view.snp.bottom).offset(-10)
             make.centerX.equalTo(nextBtnC)
         }
         singerImg.snp.makeConstraints { (make) in

@@ -11,7 +11,7 @@ import UIKit
 class TwoModel: NSObject {
     var author:String?  //作者
     var title:String?  //歌曲名
-    
+    var song_id:String?  //歌曲id
     class func loadData(OK: @escaping ([TwoModel])->()){
         NetWorkManager.post(url: "http://tingapi.ting.baidu.com/v1/restserver/ting?method=baidu.ting.billboard.billList&type=1&size=20&offset=0") { (data) in
             let songAry = data["song_list"]

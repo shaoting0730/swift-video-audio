@@ -8,11 +8,11 @@
  # 简单直播 <br/>
    直播框架采用 [ Bilibili的ijkplayer ]( https://github.com/Bilibili/ijkplayer)  <br/>
    感谢以下大神的帮助 <br/>
-   想要学习更深层次的直播内容(如:搭建Web服务器,框架集成,原理,美颜,推流,采集,送礼物动画等可以学习大神们的博客)    <br/>
-    [ 袁峥Seemygo ]( http://www.jianshu.com/u/b09c3959ab3b)   <br/>
-    [ OneTea ]( http://www.jianshu.com/u/fd4f9c1d72e2)    <br/>
-    [ Swift 3 - 映客直播iOS版 ]( http://www.swiftv.cn/course/itdrunk0)    <br/>
-    [ 小波说雨燕版 github]( https://github.com/yagamis)    <br/>
+   想要学习更深层次的直播内容(如:搭建Web服务器,框架集成,原理,美颜,推流,采集,送礼物动画等可以学习大神们的博客)<br/>
+  *  [ 袁峥Seemygo ]( http://www.jianshu.com/u/b09c3959ab3b)   <br/>
+  *  [ OneTea ]( http://www.jianshu.com/u/fd4f9c1d72e2)    <br/>
+  *  [ Swift 3 - 映客直播iOS版 ]( http://www.swiftv.cn/course/itdrunk0)    <br/>
+  *  [ 小波说雨燕版 github]( https://github.com/yagamis)    <br/>
    
  - [x] MVC模式<br/>
  - [x] 播放<br/>

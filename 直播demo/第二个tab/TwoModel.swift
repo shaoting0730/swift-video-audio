@@ -12,10 +12,18 @@ class TwoModel: NSObject {
     var author:String?  //作者
     var title:String?  //歌曲名
     
-    func dict2Model(list:[[String:AnyObject]])->[TwoModel]{
-      var models = [TwoModel]()
-        for dict in list {
-              models.append(TwoModel.init(dict: dict))
+    class func loadData(OK: @escaping ([TwoModel])->()){
+        NetWorkManager.post(url: "http://tingapi.ting.baidu.com/v1/restserver/ting?method=baidu.ting.billboard.billList&type=1&size=20&offset=0") { (data) in
+            let songAry = data["song_list"]
+            let model  = dict2Model(list: songAry as! [[String : AnyObject]])
+            OK(model)
+        }
+    }
+    
+    class func dict2Model(list:[[String:AnyObject]])->[TwoModel]{
+        var models = [TwoModel]()
+        for dict in list{
+            models.append(TwoModel.init(dict: dict))
         }
         return models
     }

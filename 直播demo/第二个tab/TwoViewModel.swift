@@ -8,7 +8,38 @@
 
 import UIKit
 
-class TwoViewModel: NSObject{
- 
+typealias  cellRenderBlock = (_ indexPath:NSIndexPath,_ tableView:UITableView) -> UITableViewCell!
+typealias  cellDidSelectBlcok = (_ indexPath:NSIndexPath,_ tableView:UITableView) -> Void
+class TwoViewModel:NSObject,UITableViewDataSource,UITableViewDelegate {
+    var cellRender:cellRenderBlock!   //渲染cell回调
+    var cellDidSelect:cellDidSelectBlcok?   //渲染点击cell回调
+    var rawCount:Int = 0 //行数
+    var sectionCount:Int = 0 //区数
+    /** 区数 */
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return sectionCount
+    }
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+      return rawCount
+    }
+
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+        let cell = cellRender(indexPath as NSIndexPath,tableView)
+        return cell!
+    }
+    
+
+    /** 点击事件 */
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let selectBlock = cellDidSelect else{
+            print("cell的选中block没有实例")
+            return
+        }
+        selectBlock(indexPath as NSIndexPath,tableView)
+    }
 
 }
+
+

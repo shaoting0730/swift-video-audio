@@ -7,34 +7,17 @@
 //
 
 import UIKit
-protocol TwoTableViewCellDatasource {
-    var title:String{get}
-    var author:String{get}
-}
 
-protocol TwoTableViewCellDelegate{
-    func didSelectCell()
-}
 
 class TwoTableViewCell: UITableViewCell {
-    fileprivate var dataSource:TwoTableViewCellDatasource?
-    fileprivate var delegate:TwoTableViewCellDelegate?
     
-    func configure(withDataSource dataSource:TwoTableViewCellDatasource,delegate:TwoTableViewCellDelegate){
-        self.dataSource = dataSource
-        self.delegate  = delegate
-        
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+       
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
 
 }

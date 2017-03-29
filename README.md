@@ -13,7 +13,7 @@
   *  [ OneTea ]( http://www.jianshu.com/u/fd4f9c1d72e2)    <br/>
   *  [ Swift 3 - 映客直播iOS版 ]( http://www.swiftv.cn/course/itdrunk0)   <br/>
   *  [ 小波说雨燕Github ]( https://github.com/yagamis)   <br/>
-  *  [ 小波说雨燕Github ]( https://github.com/yagamis)   <br/>
+  
    
  - [x] MVC模式<br/>
  - [x] 播放<br/>

@@ -41,6 +41,7 @@ class TwoViewController: UIViewController {
             playerVC.smallLogo = self.twoModel[indexPath.row].smallLogo
             playerVC.coverLarge = self.twoModel[indexPath.row].coverLarge
             playerVC.currentIndex = indexPath.row
+            playerVC.playUrl32 = self.twoModel[indexPath.row].playUrl32
              self.navigationController?.pushViewController(playerVC, animated: false)
         }
         //获取数据

@@ -5,6 +5,8 @@
     pod 'SDWebImage',  ' ~> 3.8.2 ' 
     pod 'Alamofire',  ' ~> 4.2.0 ' 
     pod 'SnapKit',  ' ~> 3.1.2 ' 
+    pod 'FreeStreamer',  ' ~> 3.7.2 '
+
  # 简单直播 <br/>
     直播框架采用 [ Bilibili的ijkplayer ]( https://github.com/Bilibili/ijkplayer)  <br/>
     感谢以下大神的帮助.<br/>
@@ -19,7 +21,6 @@
  - [x] 播放<br/>
  - [x] 播放界面背景虚化<br/>
  - [x] 简单送礼物动画<br/>
- - [ ] 上下拉<br/>
  - [ ] 其他完善 <br/>
  
  #效果截图:<br/>
@@ -30,4 +31,12 @@
  
  ----
 # 简单网络音乐播放器 <br/>
-- [ ] 正在撸代码 <br/>
+   播放框架采用[ FreeStreamer ]( https://github.com/muhku/FreeStreamer) 
+ - [x] MVVM模式<br/>
+ - [x] 简单播放<br/>
+ - [ ] 其他完善<br/>
+ 
+  #效果截图:<br/>
+ ![image](https://github.com/pheromone/swift3.0-video-audio/blob/master/audio1.png) <br/>
+ ![image](https://github.com/pheromone/swift3.0-video-audio/blob/master/audio2.png) <br/>
+ <br/>

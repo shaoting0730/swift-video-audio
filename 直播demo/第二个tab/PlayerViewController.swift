@@ -8,10 +8,15 @@
 
 import UIKit
 import SnapKit
+import IJKMediaFramework
 
 class PlayerViewController: UIViewController {
-    var song_id:String!
-    var isPlaying:Bool = false
+    var isPlaying:Bool = false   //是否播放标示
+    var  ijkPlayVC:IJKFFMoviePlayerController!
+    var twoModel = [TwoModel]()
+    var smallLogo:String!  //小图
+    var coverLarge:String!  //大图
+    var currentIndex:Int = 0   //上一个控制器点击第几行(数组下标)
         //虚化
     private lazy var viewBgImg:UIImageView = {
         let  imgView = UIImageView.init(frame: UIScreen.main.bounds)
@@ -34,10 +39,11 @@ class PlayerViewController: UIViewController {
         imgView.image = #imageLiteral(resourceName: "song_bg")
         return imgView
     }()
-    private lazy var noSoundBtn:UIButton = {
+    private lazy var prevBtn:UIButton = {
         let btn = UIButton.init(frame: CGRect.zero)
-        btn.setImage(#imageLiteral(resourceName: "noSound"), for: .normal)
-        btn.addTarget(self, action: #selector(PlayerViewController.noSound), for: .touchUpInside)
+        btn.setImage(#imageLiteral(resourceName: "prev"), for: .normal)
+        btn.tag = -1
+        btn.addTarget(self, action: #selector(PlayerViewController.prevAction), for: .touchUpInside)
         return btn
     }()
     private lazy var playBtn:UIButton = {
@@ -63,25 +69,63 @@ class PlayerViewController: UIViewController {
         imgView.layer.cornerRadius = 155/2
         return imgView
     }()
-    
-    func noSound(){
-        print(#function)
+    //上一曲事件
+    func prevAction(){
+        if(currentIndex == 0){
+            currentIndex = twoModel.count //如果是第一首歌曲,改为最后一首
+        }
+        let smallLogoNext = twoModel[currentIndex - 1].smallLogo
+        singerImg.sd_setImage(with: URL.init(string: smallLogoNext!))
+        
+        let coverLargeNextr = twoModel[currentIndex -  1].coverLarge
+        viewBgImg.sd_setImage(with: URL.init(string: coverLargeNextr!))
+        
+        currentIndex -= 1
+        self.view.setNeedsDisplay()
+
     }
-    
+    //播放按钮点击事件
     func playAction(btn:UIButton){
-        if(isPlaying == false){
+
+            if(isPlaying == false){
             self.playBtn.setImage(#imageLiteral(resourceName: "play"), for: .normal)
             rotateNeedle(isPlaying: true)
+            rotatesinger(isPlaying: true)
             isPlaying = true
         }else{
             self.playBtn.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
             rotateNeedle(isPlaying: false)
+            rotatesinger(isPlaying: false)
             isPlaying = false
         }
     }
-    
+    //图片旋转动画
+    func rotatesinger(isPlaying: Bool){
+        let anim = CABasicAnimation(keyPath: "transform.rotation")
+        if isPlaying == true {
+            anim.toValue = 2.0 * Double.pi
+            anim.duration = 5
+            anim.repeatCount = MAXFLOAT
+            anim.isCumulative = true
+            self.singerImg.layer.add(anim, forKey: "transform.rotation")
+        }else{
+            self.singerImg.layer.removeAnimation(forKey: "transform.rotation")
+        }
+    }
+    //下一曲
     func nextAction(){
-        print(#function)
+            if(currentIndex == twoModel.count - 1 ){
+                currentIndex = -1     //如果是最后一首歌曲,就从头开始
+            }
+        
+            let smallLogoNext = twoModel[currentIndex + 1].smallLogo
+            singerImg.sd_setImage(with: URL.init(string: smallLogoNext!))
+            
+            let coverLargeNextr = twoModel[currentIndex +  1].coverLarge
+            viewBgImg.sd_setImage(with: URL.init(string: coverLargeNextr!))
+            
+            currentIndex +=  1
+            self.view.setNeedsDisplay()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -94,27 +138,30 @@ class PlayerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //设置图片
+        singerImg.sd_setImage(with: URL.init(string: smallLogo))
+        viewBgImg.sd_setImage(with: URL.init(string: coverLarge))
         addSubView()
         addCons()
-        NetWorkManager.post(url: "http://tingapi.ting.baidu.com/v1/restserver/ting?method=baidu.ting.song.play&songid=" + song_id) { (data) in
-            let  songinfoDic = data["songinfo"] as! [String:AnyObject]
-            self.singerImg.sd_setImage(with: URL.init(string: songinfoDic["pic_small"] as! String))
-            self.viewBgImg.sd_setImage(with: URL.init(string: songinfoDic["pic_big"] as! String))
-        }
-
+       //进入前先让唱针置于未播放
         UIView.animate(withDuration: 0, delay: 0, options: .curveLinear, animations: { 
-            self.needle.transform = CGAffineTransform(rotationAngle: -CGFloat(M_PI / 6))
+            self.needle.transform = CGAffineTransform(rotationAngle: -CGFloat(Double.pi/6))
         }, completion: nil)
+        //请求数据
+        TwoModel.loadData { (data) in
+            self.twoModel = data
+        }
+        //播放
+       
         
-
     }
-    // MARK: - Animate
+    // 唱针动画
     func rotateNeedle(isPlaying : Bool) {
         UIView.animate(withDuration: 0.5, delay: 0, options: .curveLinear, animations: { 
             if !isPlaying {
-                self.needle.transform = CGAffineTransform(rotationAngle: -CGFloat(M_PI / 6))
+                self.needle.transform = CGAffineTransform(rotationAngle: -CGFloat(Double.pi/6))
             } else {
-                self.needle.transform = CGAffineTransform(rotationAngle: CGFloat(M_PI / 6))
+                self.needle.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/6))
             }
         }, completion: nil)
     }
@@ -123,18 +170,20 @@ class PlayerViewController: UIViewController {
         //背景虚化
         viewBgImg.addSubview(viewBg)
         view.addSubview(viewBgImg)
+        //加载控件
         view.addSubview(song_bg)
         view.addSubview(needle)
         view.addSubview(bottomView)
-        view.addSubview(noSoundBtn)
+        view.addSubview(prevBtn)
         view.addSubview(playBtn)
         view.addSubview(nextBtn)
         view.addSubview(singerImg)
     }
+    //空间布局约束
     func addCons(){
          needle.snp.makeConstraints { (make) in
-                make.width.equalTo(90)
-                make.height.equalTo(150)
+                make.width.equalTo(100)
+                make.height.equalTo(170)
                 make.centerX.equalTo(view.center.x)
                 make.topMargin.equalTo(-5)
           }
@@ -149,7 +198,7 @@ class PlayerViewController: UIViewController {
             make.bottomMargin.equalTo(self.view.snp.bottom)
         }
         let noSoundC =  self.view.center.x/2
-        noSoundBtn.snp.makeConstraints { (make) in
+        prevBtn.snp.makeConstraints { (make) in
             make.width.height.equalTo(30)
             make.bottomMargin.equalTo(self.view.snp.bottom).offset(-10)
             make.centerX.equalTo(noSoundC)
@@ -176,7 +225,5 @@ class PlayerViewController: UIViewController {
         super.didReceiveMemoryWarning()
         
     }
-    
-    
     
 }

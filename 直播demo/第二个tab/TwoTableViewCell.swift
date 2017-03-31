@@ -13,6 +13,7 @@ class TwoTableViewCell: UITableViewCell {
      lazy var titleAuthorLabel:UILabel = {
           let label = UILabel.init(frame: CGRect.zero)
           label.textColor  = UIColor.white
+          label.font = UIFont.systemFont(ofSize: 15)
           return label
     }()
     

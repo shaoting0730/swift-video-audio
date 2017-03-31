@@ -29,7 +29,7 @@ class TwoViewController: UIViewController {
         viewModel.cellRender = { indexPath,tablleView in
             let cell = tablleView.dequeueReusableCell(withIdentifier: TwoTableViewCellIdentifie, for: indexPath as IndexPath) as! TwoTableViewCell
             
-            let author =   self.twoModel[indexPath.row].author!
+            let author =   self.twoModel[indexPath.row].nickname!
             let title = self.twoModel[indexPath.row].title!
             cell.titleAuthorLabel.text = title + "--" + author
             
@@ -38,7 +38,9 @@ class TwoViewController: UIViewController {
         // cell点击事件
         viewModel.cellDidSelect = { indexPath,tablleView in
             let  playerVC = PlayerViewController()
-            playerVC.song_id = self.twoModel[indexPath.row].song_id
+            playerVC.smallLogo = self.twoModel[indexPath.row].smallLogo
+            playerVC.coverLarge = self.twoModel[indexPath.row].coverLarge
+            playerVC.currentIndex = indexPath.row
              self.navigationController?.pushViewController(playerVC, animated: false)
         }
         //获取数据

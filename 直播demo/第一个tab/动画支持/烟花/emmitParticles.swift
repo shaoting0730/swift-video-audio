@@ -18,14 +18,14 @@ func emmitParticles(from point: CGPoint, emitter: CAEmitterLayer , in rootView:U
     
     let rocket = CAEmitterCell()
     
-    rocket.emissionLongitude = CGFloat(M_PI_2)
+    rocket.emissionLongitude = CGFloat(Double.pi/2)
     rocket.emissionLatitude = 0
     rocket.lifetime = 1.6
     rocket.birthRate = 1
     rocket.velocity = 40
     rocket.velocityRange = 100
     rocket.yAcceleration = -250
-    rocket.emissionRange = CGFloat(M_PI_4)
+    rocket.emissionRange = CGFloat(Double.pi/4)
     rocket.color = UIColor(colorLiteralRed: 0.5, green: 0.5, blue: 0.5, alpha: 0.8).cgColor
     rocket.redRange = 0.5
     rocket.greenRange = 0.5
@@ -35,13 +35,13 @@ func emmitParticles(from point: CGPoint, emitter: CAEmitterLayer , in rootView:U
     
     let flare = CAEmitterCell()
     flare.contents = image.cgImage
-    flare.emissionLongitude = 4 * CGFloat(M_PI_2)
+    flare.emissionLongitude = 4 * CGFloat(Double.pi/2)
     flare.scale = 0.4
     flare.velocity = 100;
     flare.birthRate = 45;
     flare.lifetime = 1.5;
     flare.yAcceleration = -350;
-    flare.emissionRange = CGFloat(M_PI / 7)
+    flare.emissionRange = CGFloat(Double.pi/7)
     flare.alphaSpeed = -0.7;
     flare.scaleSpeed = -0.1;
     flare.scaleRange = 0.1;
@@ -59,7 +59,7 @@ func emmitParticles(from point: CGPoint, emitter: CAEmitterLayer , in rootView:U
     firework.yAcceleration = -80;
     firework.beginTime = 1.5;
     firework.duration = 0.1;
-    firework.emissionRange = CGFloat(M_PI * 2)
+    firework.emissionRange = CGFloat(Double.pi * 2)
     firework.scaleSpeed = -0.1
     firework.spin = 2;
     

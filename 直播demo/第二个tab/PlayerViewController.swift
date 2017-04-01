@@ -11,15 +11,14 @@ import SnapKit
 import IJKMediaFramework
 
 class PlayerViewController: UIViewController {
-    var isPlaying:Bool = false   //是否播放标示
+    var audioPlaying:Bool = true   //是否播放标示 默认播放
     var  ijkPlayVC:IJKFFMoviePlayerController!
     var twoModel = [TwoModel]()
     var smallLogo:String!  //小图
     var coverLarge:String!  //大图
     var playUrl32:String! //歌曲链接
     var currentIndex:Int = 0   //上一个控制器点击第几行(数组下标)
-    let audioVC = FSAudioStream.init()  //音乐播放器
-    var pauseTag = false  //暂停tag
+    let  audioVC = FSAudioStream.init()  //音乐播放器
 
     //虚化
     private lazy var viewBgImg:UIImageView = {
@@ -52,7 +51,7 @@ class PlayerViewController: UIViewController {
     }()
     private lazy var playBtn:UIButton = {
         let btn = UIButton.init(frame: CGRect.zero)
-        btn.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+        btn.setImage(#imageLiteral(resourceName: "play"), for: .normal)
         btn.addTarget(self, action: #selector(PlayerViewController.playAction), for: .touchUpInside)
         return btn
     }()
@@ -84,44 +83,41 @@ class PlayerViewController: UIViewController {
         let coverLargeNextr = twoModel[currentIndex -  1].coverLarge
         viewBgImg.sd_setImage(with: URL.init(string: coverLargeNextr!))
         
-        if(isPlaying == true){
-            audioVC.play(from: URL.init(string: twoModel[currentIndex -  1].playUrl32!))
-        }
+        audioVC.play(from: URL.init(string: twoModel[currentIndex -  1].playUrl32!))
+        
         currentIndex -= 1
         self.view.setNeedsDisplay()
         
     }
     //播放按钮点击事件
     func playAction(btn:UIButton){
-        self.rotatesinger()
-        
-        if(isPlaying == false){
-            self.playBtn.setImage(#imageLiteral(resourceName: "play"), for: .normal)
-            rotateNeedle(isPlaying: true)
-            audioVC.play(from: URL.init(string:  playUrl32))
-             isPlaying = true
+        audioVC.pause()
+        self.rotatesinger()  //图片旋转
+        if(audioVC.isPlaying() == false){
+           self.playBtn.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+            
         }else{
-            self.playBtn.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
-            rotateNeedle(isPlaying: false)
-            audioVC.stop()
-            pauseTag = false
-            isPlaying = false
-        }
-    }
+          self.playBtn.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+            
+         }
+      }
     //图片旋转动画
     func rotatesinger(){
         let singerAnim = singerImg.layer.animation(forKey: "transform.rotation")
         if (singerAnim != nil) {
             if(singerImg.layer.speed == 0){
-                self.resumeAnimation()
+                self.resumeAnimation()  //恢复动画
+                self.needleWorking() //唱针工作
             }else{
                 self.pauseAnimation()  //暂停动画
+                self.needleWorked()   //唱针不工作
             }
         }else{
-               self.rotationAnimation()
+               self.rotationAnimation()  //开始动画
+               self.needleWorking() //唱针工作
         }
     }
-    //图片旋转动画
+    //图片开始旋转动画
     func rotationAnimation(){
         let anim = CABasicAnimation(keyPath: "transform.rotation")   //图片旋转动画
         anim.toValue = 2.0 * Double.pi
@@ -149,15 +145,25 @@ class PlayerViewController: UIViewController {
         singerImg.layer.beginTime = begin
         singerImg.layer.speed = 1
     }
+    //唱针工作
+    func needleWorking(){
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveLinear, animations: {
+            self.needle.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/6))
+        }, completion: nil)
+    }
+    //唱针不工作
+    func needleWorked(){
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveLinear, animations: {
+            self.needle.transform = CGAffineTransform(rotationAngle:  -CGFloat(Double.pi/6))
+        }, completion: nil)
+    }
     
     
     //下一曲
     func nextAction(){
-
         if(currentIndex == twoModel.count - 1 ){
             currentIndex = -1     //如果是最后一首歌曲,就从头开始
         }
-        
         let smallLogoNext = twoModel[currentIndex + 1].smallLogo
         singerImg.sd_setImage(with: URL.init(string: smallLogoNext!))
         
@@ -165,9 +171,7 @@ class PlayerViewController: UIViewController {
         viewBgImg.sd_setImage(with: URL.init(string: coverLargeNextr!))
 
         playUrl32 = twoModel[currentIndex +  1].playUrl32!
-        if(isPlaying == true){
-            audioVC.play(from: URL.init(string: playUrl32))
-        }
+        audioVC.play(from: URL.init(string: playUrl32))
         
         currentIndex +=  1
         self.view.setNeedsDisplay()
@@ -188,27 +192,13 @@ class PlayerViewController: UIViewController {
         viewBgImg.sd_setImage(with: URL.init(string: coverLarge))
         addSubView()
         addCons()
-        //进入前先让唱针置于未播放
-        UIView.animate(withDuration: 0, delay: 0, options: .curveLinear, animations: {
-            self.needle.transform = CGAffineTransform(rotationAngle: -CGFloat(Double.pi/6))
-        }, completion: nil)
+        rotatesinger()
         //请求数据
         TwoModel.loadData { (data) in
             self.twoModel = data
         }
-        //播放
+         audioVC.play(from: URL.init(string:  playUrl32))
         
-        
-    }
-    // 唱针动画
-    func rotateNeedle(isPlaying : Bool) {
-        UIView.animate(withDuration: 0.5, delay: 0, options: .curveLinear, animations: {
-            if !isPlaying {
-                self.needle.transform = CGAffineTransform(rotationAngle: -CGFloat(Double.pi/6))
-            } else {
-                self.needle.transform = CGAffineTransform(rotationAngle: CGFloat(Double.pi/6))
-            }
-        }, completion: nil)
     }
     
     func addSubView(){

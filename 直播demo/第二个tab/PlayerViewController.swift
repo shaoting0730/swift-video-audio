@@ -20,6 +20,7 @@ class PlayerViewController: UIViewController {
     var currentIndex:Int = 0   //上一个控制器点击第几行(数组下标)
     let audioVC = FSAudioStream.init()  //音乐播放器
     var pauseTag = false  //暂停tag
+
     //虚化
     private lazy var viewBgImg:UIImageView = {
         let  imgView = UIImageView.init(frame: UIScreen.main.bounds)
@@ -92,36 +93,64 @@ class PlayerViewController: UIViewController {
     }
     //播放按钮点击事件
     func playAction(btn:UIButton){
-        
+        self.rotatesinger()
         
         if(isPlaying == false){
             self.playBtn.setImage(#imageLiteral(resourceName: "play"), for: .normal)
             rotateNeedle(isPlaying: true)
-            rotatesinger(isPlaying: true)
             audioVC.play(from: URL.init(string:  playUrl32))
              isPlaying = true
         }else{
             self.playBtn.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
             rotateNeedle(isPlaying: false)
-            rotatesinger(isPlaying: false)
             audioVC.stop()
             pauseTag = false
             isPlaying = false
         }
     }
     //图片旋转动画
-    func rotatesinger(isPlaying: Bool){
-        let anim = CABasicAnimation(keyPath: "transform.rotation")
-        if isPlaying == true {
-            anim.toValue = 2.0 * Double.pi
-            anim.duration = 5
-            anim.repeatCount = MAXFLOAT
-            anim.isCumulative = true
-            self.singerImg.layer.add(anim, forKey: "transform.rotation")
+    func rotatesinger(){
+        let singerAnim = singerImg.layer.animation(forKey: "transform.rotation")
+        if (singerAnim != nil) {
+            if(singerImg.layer.speed == 0){
+                self.resumeAnimation()
+            }else{
+                self.pauseAnimation()  //暂停动画
+            }
         }else{
-            self.singerImg.layer.removeAnimation(forKey: "transform.rotation")
+               self.rotationAnimation()
         }
     }
+    //图片旋转动画
+    func rotationAnimation(){
+        let anim = CABasicAnimation(keyPath: "transform.rotation")   //图片旋转动画
+        anim.toValue = 2.0 * Double.pi
+        anim.duration = 5
+        anim.repeatCount = MAXFLOAT
+        anim.isCumulative = true
+        self.singerImg.layer.add(anim, forKey: "transform.rotation")
+    }
+    //图片暂停动画
+    func pauseAnimation() {
+        //1.取出当前时间,转成动画暂停的时间
+        let pauseTime = singerImg.layer.convertTime(CACurrentMediaTime(), from: nil)
+        //2.设置动画时间的偏移量,让动画定格在该时间点的位置上
+        singerImg.layer.timeOffset = pauseTime
+        //3.将动画的运行速度设置为0,默认速度为1.0
+        singerImg.layer.speed = 0
+    }
+    //图片恢复旋转动画
+    func resumeAnimation(){
+          //1.将动画的时间偏移量作为暂停的时间点
+        let pauseTime = singerImg.layer.timeOffset;
+        //2.计算出开始时间
+        let begin = CACurrentMediaTime() - pauseTime
+        singerImg.layer.timeOffset = 0
+        singerImg.layer.beginTime = begin
+        singerImg.layer.speed = 1
+    }
+    
+    
     //下一曲
     func nextAction(){
 

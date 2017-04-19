@@ -10,16 +10,15 @@ import UIKit
 import SnapKit
 import IJKMediaFramework
 
+private let UITableViewCellIdentifier = "UITableViewCellIdentifier"
 class PlayerViewController: UIViewController {
     var audioPlaying:Bool = true   //是否播放标示 默认播放
     var  ijkPlayVC:IJKFFMoviePlayerController!
     var twoModel = [TwoModel]()
-    var smallLogo:String!  //小图
-    var coverLarge:String!  //大图
-    var playUrl32:String! //歌曲链接
+    var song_id:String!   //歌曲id
+    var songidAry:[String]!  //songid数组
     var currentIndex:Int = 0   //上一个控制器点击第几行(数组下标)
     let  audioVC = FSAudioStream.init()  //音乐播放器
-
     //虚化
     private lazy var viewBgImg:UIImageView = {
         let  imgView = UIImageView.init(frame: UIScreen.main.bounds)
@@ -72,35 +71,38 @@ class PlayerViewController: UIViewController {
         imgView.layer.cornerRadius = 155/2
         return imgView
     }()
+    private lazy var songlryTab:UITableView = {
+        let songlryTab = UITableView.init(frame: CGRect.zero)
+        songlryTab.delegate = self
+        songlryTab.dataSource = self
+        songlryTab.register(UITableViewCell.self, forCellReuseIdentifier: UITableViewCellIdentifier)
+        songlryTab.backgroundColor = UIColor.red
+        return songlryTab
+    }()
     //上一曲事件
     func prevAction(){
-        if(currentIndex == 0){
-            currentIndex = twoModel.count //如果是第一首歌曲,改为最后一首
+        
+        if(currentIndex == 0 ){
+            currentIndex = songidAry.count //如果是第一首歌曲,改为最后一首
         }
-        let smallLogoNext = twoModel[currentIndex - 1].smallLogo
-        singerImg.sd_setImage(with: URL.init(string: smallLogoNext!))
-        
-        let coverLargeNextr = twoModel[currentIndex -  1].coverLarge
-        viewBgImg.sd_setImage(with: URL.init(string: coverLargeNextr!))
-        
-        audioVC.play(from: URL.init(string: twoModel[currentIndex -  1].playUrl32!))
-        
         currentIndex -= 1
+        song_id = songidAry[currentIndex]
+        loadSonginfo()
         self.view.setNeedsDisplay()
-        
+    
     }
     //播放按钮点击事件
     func playAction(btn:UIButton){
         audioVC.pause()
         self.rotatesinger()  //图片旋转
         if(audioVC.isPlaying() == false){
-           self.playBtn.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+            self.playBtn.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
             
         }else{
-          self.playBtn.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+            self.playBtn.setImage(#imageLiteral(resourceName: "play"), for: .normal)
             
-         }
-      }
+        }
+    }
     //图片旋转动画
     func rotatesinger(){
         let singerAnim = singerImg.layer.animation(forKey: "transform.rotation")
@@ -113,8 +115,8 @@ class PlayerViewController: UIViewController {
                 self.needleWorked()   //唱针不工作
             }
         }else{
-               self.rotationAnimation()  //开始动画
-               self.needleWorking() //唱针工作
+            self.rotationAnimation()  //开始动画
+            self.needleWorking() //唱针工作
         }
     }
     //图片开始旋转动画
@@ -137,7 +139,7 @@ class PlayerViewController: UIViewController {
     }
     //图片恢复旋转动画
     func resumeAnimation(){
-          //1.将动画的时间偏移量作为暂停的时间点
+        //1.将动画的时间偏移量作为暂停的时间点
         let pauseTime = singerImg.layer.timeOffset;
         //2.计算出开始时间
         let begin = CACurrentMediaTime() - pauseTime
@@ -161,19 +163,12 @@ class PlayerViewController: UIViewController {
     
     //下一曲
     func nextAction(){
-        if(currentIndex == twoModel.count - 1 ){
+        if(currentIndex == songidAry.count - 1 ){
             currentIndex = -1     //如果是最后一首歌曲,就从头开始
         }
-        let smallLogoNext = twoModel[currentIndex + 1].smallLogo
-        singerImg.sd_setImage(with: URL.init(string: smallLogoNext!))
-        
-        let coverLargeNextr = twoModel[currentIndex +  1].coverLarge
-        viewBgImg.sd_setImage(with: URL.init(string: coverLargeNextr!))
-
-        playUrl32 = twoModel[currentIndex +  1].playUrl32!
-        audioVC.play(from: URL.init(string: playUrl32))
-        
-        currentIndex +=  1
+        currentIndex += 1
+        song_id = songidAry[currentIndex]
+        loadSonginfo()
         self.view.setNeedsDisplay()
     }
     
@@ -185,19 +180,48 @@ class PlayerViewController: UIViewController {
         self.tabBarController?.tabBar.isHidden = false
     }
     
+    //加载歌曲信息
+    func loadSonginfo(){
+        let url = "http://tingapi.ting.baidu.com/v1/restserver/ting?method=baidu.ting.song.play&songid=" + song_id
+        NetWorkManager.post(url: url) { (data) in
+            var  songinfoDic = data as [String : AnyObject]  //歌曲信息字典
+            var songinfo:[String:AnyObject] = songinfoDic["songinfo"] as! [String : AnyObject]
+            var bitrate:[String:AnyObject] = songinfoDic["bitrate"] as! [String:AnyObject]
+            self.singerImg.sd_setImage(with: URL.init(string: songinfo["pic_small"] as! String))
+            self.viewBgImg.sd_setImage(with: URL.init(string: songinfo["pic_big"] as! String))
+            self.audioVC.play(from: URL.init(string:  bitrate["file_link"] as! String))
+        }
+    }
+    
+    //加载歌词文件
+    func loadSonglry(){
+        let url = "http://tingapi.ting.baidu.com/v1/restserver/ting?method=baidu.ting.song.lry&songid=" + song_id
+        NetWorkManager.post(url: url) { (data) in
+            var  songinfoDic = data as [String : AnyObject]  //歌曲信息字典
+            var lrcContent = songinfoDic["lrcContent"] as! String  //歌词
+            self.dealWithSonglry(lrcContent: lrcContent)
+        }
+    }
+    
+    //处理歌词
+    func dealWithSonglry(lrcContent:String){
+        let lryAry = lrcContent.characters.split(separator: "\n")
+        for val in lryAry {
+            print(val)
+            var obj = {} //用于存放时间
+            let indexofLastTime = val.index(of: "]")  // ]的下标
+            let timeStr = val.index(val.startIndex, offsetBy: val.count - 1)
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        //设置图片
-        singerImg.sd_setImage(with: URL.init(string: smallLogo))
-        viewBgImg.sd_setImage(with: URL.init(string: coverLarge))
+        loadSonginfo()
+        loadSonglry()
         addSubView()
         addCons()
         rotatesinger()
-        //请求数据
-        TwoModel.loadData { (data) in
-            self.twoModel = data
-        }
-         audioVC.play(from: URL.init(string:  playUrl32))
         
     }
     
@@ -213,6 +237,7 @@ class PlayerViewController: UIViewController {
         view.addSubview(playBtn)
         view.addSubview(nextBtn)
         view.addSubview(singerImg)
+        view.addSubview(songlryTab)
     }
     //空间布局约束
     func addCons(){
@@ -254,11 +279,28 @@ class PlayerViewController: UIViewController {
             make.centerX.equalTo(view.center.x)
             make.centerY.equalTo(view.center.y  - 50)
         }
+        songlryTab.snp.makeConstraints { (make) in
+            make.width.equalTo(self.view.bounds.width)
+            make.bottomMargin.equalTo(self.view.snp.bottom).offset(-49)
+            make.topMargin.equalTo(song_bg.snp.bottom).offset(5)
+        }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
     
+}
+
+extension PlayerViewController:UITableViewDelegate,UITableViewDataSource{
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
+        return 10
+    }
+
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+     let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCellIdentifier, for: indexPath)
+     cell.textLabel?.text = "ddddddddddd"
+        return cell;
+     }
 }

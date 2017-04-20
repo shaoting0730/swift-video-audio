@@ -9,17 +9,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>FreeStreamer.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-直播demo.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Reachability.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -37,7 +27,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1692151F13D1E81C96C8EBB444EE2CBD</key>
+		<key>4E1D5989C55A5EDCA8DFCA1972B4EA5E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -47,22 +37,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9C8E44ED4B2A3F5EA77697C7DAD3F36E</key>
+		<key>C3380DACC1D7600E9BBA4FDD32FA8AAB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9E10EB6060CED15C12825D160A92C24A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>AC4A322988F097B1E752EB3107D61DE9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F2E372B17FEFE6C6062C4A1DAA85165F</key>
+		<key>C9F9D35DEE390F38E5BACAF828FC6CCE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

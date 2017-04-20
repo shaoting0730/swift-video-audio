@@ -8,19 +8,21 @@
 
 import UIKit
 import SnapKit
-import IJKMediaFramework
-
+import AVFoundation
 private let UITableViewCellIdentifier = "UITableViewCellIdentifier"
 class PlayerViewController: UIViewController {
     var audioPlaying:Bool = true   //是否播放标示 默认播放
-    var  ijkPlayVC:IJKFFMoviePlayerController!
     var twoModel = [TwoModel]()
     var song_id:String!   //歌曲id
     var songidAry:[String]!  //songid数组
     var currentIndex:Int = 0   //上一个控制器点击第几行(数组下标)
-    let  audioVC = FSAudioStream.init()  //音乐播放器
+    var player:AVPlayer = AVPlayer.init()
+    var isplayer:Bool = true //播放状态 默认播放
     var songlryAry:[[String:Any]] =  [[String:Any]]() //歌词数组
+    var file_duration:Int = 0 //歌曲总长度
     var songIryDic:[String:Any] = ["lry" : " " , "total" : 0]  //单句歌词字典   时间:XX  歌词:XX
+    var y = 40
+
     //虚化
     private lazy var viewBgImg:UIImageView = {
         let  imgView = UIImageView.init(frame: UIScreen.main.bounds)
@@ -96,15 +98,17 @@ class PlayerViewController: UIViewController {
     }
     //播放按钮点击事件
     func playAction(btn:UIButton){
-        audioVC.pause()
         self.rotatesinger()  //图片旋转
-        if(audioVC.isPlaying() == false){
-            self.playBtn.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
-            
+        if(isplayer == false){
+            isplayer = true
+            playBtn.setImage(#imageLiteral(resourceName: "play"), for: .normal)
+            player.play()
         }else{
-            self.playBtn.setImage(#imageLiteral(resourceName: "play"), for: .normal)
-            
+            isplayer = false
+            playBtn.setImage(#imageLiteral(resourceName: "pause"), for: .normal)
+            player.pause()
         }
+        
     }
     //图片旋转动画
     func rotatesinger(){
@@ -194,9 +198,24 @@ class PlayerViewController: UIViewController {
             var bitrate:[String:AnyObject] = songinfoDic["bitrate"] as! [String:AnyObject]
             self.singerImg.sd_setImage(with: URL.init(string: songinfo["pic_small"] as! String))
             self.viewBgImg.sd_setImage(with: URL.init(string: songinfo["pic_big"] as! String))
-            self.audioVC.play(from: URL.init(string:  bitrate["file_link"] as! String))
-
+            self.player = AVPlayer.init(url: URL.init(string: bitrate["file_link"] as! String)!)
+            self.file_duration = bitrate["file_duration"] as! Int
+            self.player.play()
+//            let time = self.player.addPeriodicTimeObserver(forInterval: CMTimeMake(Int64(1.0), Int32(1.0)), queue: DispatchQueue.main, using: { (time) in
+//                let current = CMTimeGetSeconds(time)
+//                let currentD = current as! Double
+//                for  dic in self.songlryAry{
+//                    let total = dic["total"] as! Double
+//                    if(currentD >= total){
+//                        print("歌词该动额")
+//                        }
+//                }
+//            })
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
     }
     
     //加载歌词文件
@@ -218,7 +237,7 @@ class PlayerViewController: UIViewController {
         
         for lry in lryAry {
             //歌词处理 部分情况尚未考虑到
-            if(lry.characters.count > 0){
+            if(lry.characters.count > 1){
                 let strStart = (lry as NSString).substring(with: NSRange.init(location: 1, length: 1)) //先获取到第二个元素
                 if(Int(strStart) != nil){  //判断是否是数字字符
                     let min = Double( (lry as NSString).substring(with: NSMakeRange(1, 2)))
@@ -244,6 +263,7 @@ class PlayerViewController: UIViewController {
         
         loadSonginfo()
         loadSonglry()
+        
     }
     
     func addSubView(){

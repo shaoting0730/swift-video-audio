@@ -5,5 +5,4 @@ target '直播demo' do
     pod 'SDWebImage', '~> 3.8.2'
     pod 'Alamofire', '~> 4.2.0'
     pod 'SnapKit', '~> 3.1.2'
-    pod 'FreeStreamer', '~> 3.7.2'
 end

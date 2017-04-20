@@ -10,13 +10,15 @@ import UIKit
 
 class TwoModel: NSObject {
     var playUrl32:String?  //歌曲链接
-    var title:String?  //歌曲名
-    var nickname:String?  //作者
     var smallLogo:String?   //小图
     var coverLarge:String?  //大图
+    var song_id:String? //歌曲id
+    var title:String?  //歌曲名
+    var author:String?  //作者
+    static var songidAry:[String] = []   //songid数组
     class func loadData(OK: @escaping ([TwoModel])->()){
-        NetWorkManager.post(url: "http://mobile.ximalaya.com/mobile/others/ca/album/track/242825/true/1/20") { (data) in
-            let songAry = data["tracks"]?["list"]
+        NetWorkManager.post(url: "http://tingapi.ting.baidu.com/v1/restserver/ting?method=baidu.ting.billboard.billList&type=2&size=20&offset=0") { (data) in
+            let songAry = data["song_list"]
             let model  = dict2Model(list: songAry as! [[String : AnyObject]])
             OK(model)
         }
@@ -37,7 +39,10 @@ class TwoModel: NSObject {
     
     override func setValue(_ value: Any?, forKey key: String) {
         super.setValue(value, forKey: key)
-
+        if(key == "song_id"){
+            //把所有歌曲的songid放进数组中
+            TwoModel.songidAry.append(value! as! String)
+        }
     }
     
     //防止崩溃

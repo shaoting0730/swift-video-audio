@@ -5,7 +5,7 @@
     pod 'SDWebImage',  ' ~> 3.8.2 ' 
     pod 'Alamofire',  ' ~> 4.2.0 ' 
     pod 'SnapKit',  ' ~> 3.1.2 ' 
-    pod 'FreeStreamer',  ' ~> 3.7.2 '
+    
 
  # 简单直播 <br/>
     直播框架采用 [ Bilibili的ijkplayer ]( https://github.com/Bilibili/ijkplayer)  <br/>
@@ -31,7 +31,7 @@
  
  ----
 # 简单网络音乐播放器 <br/>
-   播放框架采用[ FreeStreamer ]( https://github.com/muhku/FreeStreamer) 
+   播放框架采用系统的AVPlayer
  - [x] MVVM模式<br/>
  - [x] 简单播放<br/>
  - [ ] 其他完善<br/>

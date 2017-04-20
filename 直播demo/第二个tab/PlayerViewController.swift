@@ -19,7 +19,6 @@ class PlayerViewController: UIViewController {
     var songidAry:[String]!  //songid数组
     var currentIndex:Int = 0   //上一个控制器点击第几行(数组下标)
     let  audioVC = FSAudioStream.init()  //音乐播放器
-    var songlryAry:[String] = []
     //虚化
     private lazy var viewBgImg:UIImageView = {
         let  imgView = UIImageView.init(frame: UIScreen.main.bounds)
@@ -77,7 +76,7 @@ class PlayerViewController: UIViewController {
         songlryTab.delegate = self
         songlryTab.dataSource = self
         songlryTab.register(UITableViewCell.self, forCellReuseIdentifier: UITableViewCellIdentifier)
-        songlryTab.backgroundColor = UIColor.clear
+        songlryTab.backgroundColor = UIColor.red
         return songlryTab
     }()
     //上一曲事件
@@ -206,20 +205,12 @@ class PlayerViewController: UIViewController {
     
     //处理歌词
     func dealWithSonglry(lrcContent:String){
-        let lryAry:[String] =  lrcContent.components(separatedBy: "\n")
-        songlryAry = lryAry
-        songlryTab.reloadData()
-        var i = 0
-        for lry in lryAry {
-            i += 1
-            if(i > 5){
-                let min =  (lry as NSString).substring(with: NSMakeRange(1, 8))
-//                let sec  =  (lry as NSString).substring(with: NSMakeRange(4, 5))
-//                let ms =    (lry as NSString).substring(with: NSMakeRange(7, 8))
-                print(min)
-//                print(sec)
-            }
-
+        let lryAry = lrcContent.characters.split(separator: "\n")
+        for val in lryAry {
+            print(val)
+            var obj = {} //用于存放时间
+            let indexofLastTime = val.index(of: "]")  // ]的下标
+            let timeStr = val.index(val.startIndex, offsetBy: val.count - 1)
         }
     }
     
@@ -304,13 +295,12 @@ class PlayerViewController: UIViewController {
 
 extension PlayerViewController:UITableViewDelegate,UITableViewDataSource{
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-        return songlryAry.count
+        return 10
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
      let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCellIdentifier, for: indexPath)
-        cell.backgroundColor = UIColor.clear
-        cell.textLabel?.text = songlryAry[indexPath.row]
+     cell.textLabel?.text = "ddddddddddd"
         return cell;
      }
 }

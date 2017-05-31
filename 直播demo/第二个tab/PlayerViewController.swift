@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 import AVFoundation
-private let UITableViewCellIdentifier = "UITableViewCellIdentifier"
+fileprivate let UITableViewCellIdentifier = "UITableViewCellIdentifier"
 class PlayerViewController: UIViewController {
     var audioPlaying:Bool = true   //是否播放标示 默认播放
     var twoModel = [TwoModel]()
@@ -24,59 +24,59 @@ class PlayerViewController: UIViewController {
     var y = 40
 
     //虚化
-    private lazy var viewBgImg:UIImageView = {
+    fileprivate lazy var viewBgImg:UIImageView = {
         let  imgView = UIImageView.init(frame: UIScreen.main.bounds)
         return imgView
     }()
-    private lazy var viewBg:UIVisualEffectView = {
+    fileprivate lazy var viewBg:UIVisualEffectView = {
         let blurEffect = UIBlurEffect.init(style: .light)
         let effetView = UIVisualEffectView.init(effect: blurEffect)
         effetView.frame = UIScreen.main.bounds
         return effetView
     }()
-    private lazy var needle:UIImageView = {
+    fileprivate lazy var needle:UIImageView = {
         let imgView = UIImageView.init(frame: CGRect.zero)
         imgView.layer.anchorPoint = CGPoint.init(x: 0.25, y: 0.16)
         imgView.image = #imageLiteral(resourceName: "CD_needle")
         return imgView
     }()
-    private lazy var song_bg:UIImageView = {
+    fileprivate lazy var song_bg:UIImageView = {
         let imgView = UIImageView.init(frame: CGRect.zero)
         imgView.image = #imageLiteral(resourceName: "song_bg")
         return imgView
     }()
-    private lazy var prevBtn:UIButton = {
+    fileprivate lazy var prevBtn:UIButton = {
         let btn = UIButton.init(frame: CGRect.zero)
         btn.setImage(#imageLiteral(resourceName: "prev"), for: .normal)
         btn.tag = -1
         btn.addTarget(self, action: #selector(PlayerViewController.prevAction), for: .touchUpInside)
         return btn
     }()
-    private lazy var playBtn:UIButton = {
+    fileprivate lazy var playBtn:UIButton = {
         let btn = UIButton.init(frame: CGRect.zero)
         btn.setImage(#imageLiteral(resourceName: "play"), for: .normal)
         btn.addTarget(self, action: #selector(PlayerViewController.playAction), for: .touchUpInside)
         return btn
     }()
-    private lazy var nextBtn:UIButton = {
+    fileprivate lazy var nextBtn:UIButton = {
         let btn = UIButton.init(frame: CGRect.zero)
         btn.setImage(#imageLiteral(resourceName: "next"), for: .normal)
         btn.addTarget(self, action: #selector(PlayerViewController.nextAction), for: .touchUpInside)
         return btn
     }()
-    private lazy var bottomView:UIView = {
+    fileprivate lazy var bottomView:UIView = {
         let view = UIView.init(frame: CGRect.zero)
         view.backgroundColor = UIColor.darkGray
         return view
     }()
-    private lazy var singerImg:UIImageView = {
+    fileprivate lazy var singerImg:UIImageView = {
         let imgView = UIImageView.init(frame: CGRect.zero)
         imgView.layer.masksToBounds = true
         imgView.layer.cornerRadius = 155/2
         return imgView
     }()
     
-    private lazy var songlryTab:UITableView = {
+    fileprivate lazy var songlryTab:UITableView = {
         let songlryTab = UITableView.init(frame: CGRect.zero)
         songlryTab.delegate = self
         songlryTab.dataSource = self

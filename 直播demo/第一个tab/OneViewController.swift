@@ -8,10 +8,10 @@
 
 import UIKit
 import SDWebImage
-private let UITableViewCellIdentifier = "UITableViewCellIdentifier"
+fileprivate let UITableViewCellIdentifier = "UITableViewCellIdentifier"
 class OneViewController: UIViewController {
     var oneModel = [OneModel]()
-    private lazy var tableView:UITableView = {
+    fileprivate lazy var tableView:UITableView = {
         let tableView = UITableView.init(frame: UIScreen.main.bounds)
         tableView.register(OneTableViewCell.self, forCellReuseIdentifier: UITableViewCellIdentifier)
         tableView.delegate = self

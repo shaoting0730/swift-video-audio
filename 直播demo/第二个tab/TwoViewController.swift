@@ -7,7 +7,7 @@
 //
 
 import UIKit
-private let TwoTableViewCellIdentifie = "TwoTableViewCellIdentifie"
+fileprivate let TwoTableViewCellIdentifie = "TwoTableViewCellIdentifie"
 class TwoViewController: UIViewController {
     let viewModel = TwoViewModel()
     var twoModel = [TwoModel]()

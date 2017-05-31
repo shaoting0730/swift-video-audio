@@ -20,21 +20,21 @@ class VideoViewController: UIViewController {
             viewBgImg.sd_setImage(with: url)
         }
     }
-    private lazy var backBtn:UIButton  = {
+    fileprivate lazy var backBtn:UIButton  = {
         var backBtn = UIButton.init(frame: CGRect.zero)
         backBtn.setTitle("返回", for: .normal)
         backBtn.setTitleColor(UIColor.white, for: .normal)
         backBtn.addTarget(self, action: #selector(VideoViewController.backAction), for: .touchUpInside)
         return backBtn
     }()
-    private lazy var heartBtn:UIButton  = {
+    fileprivate lazy var heartBtn:UIButton  = {
         var heartBtn = UIButton.init(frame: CGRect.zero)
         heartBtn.setTitleColor(UIColor.white, for: .normal)
         heartBtn.setImage(#imageLiteral(resourceName: "点赞"), for: .normal)
         heartBtn.addTarget(self, action: #selector(VideoViewController.heartAction), for: .touchUpInside)
         return heartBtn
     }()
-    private lazy var giftBtn:UIButton  = {
+    fileprivate lazy var giftBtn:UIButton  = {
         var giftBtn = UIButton.init(frame: CGRect.zero)
         giftBtn.setTitleColor(UIColor.white, for: .normal)
         giftBtn.setImage(#imageLiteral(resourceName: "gift"), for: .normal)
@@ -42,8 +42,8 @@ class VideoViewController: UIViewController {
         return giftBtn
     }()
     //虚化
-    private lazy var viewBgImg:UIImageView = UIImageView()
-    private lazy var viewBg:UIVisualEffectView = {
+    fileprivate lazy var viewBgImg:UIImageView = UIImageView()
+    fileprivate lazy var viewBg:UIVisualEffectView = {
         let blurEffect = UIBlurEffect.init(style: .light)
         let effetView = UIVisualEffectView.init(effect: blurEffect)
         effetView.frame = UIScreen.main.bounds

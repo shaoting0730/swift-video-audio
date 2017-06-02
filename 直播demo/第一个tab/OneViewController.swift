@@ -11,6 +11,9 @@ import SDWebImage
 fileprivate let UITableViewCellIdentifier = "UITableViewCellIdentifier"
 class OneViewController: UIViewController {
     var oneModel = [OneModel]()
+    var isAnimation:Bool?
+    var y:CGFloat = 0
+
     fileprivate lazy var tableView:UITableView = {
         let tableView = UITableView.init(frame: UIScreen.main.bounds)
         tableView.register(OneTableViewCell.self, forCellReuseIdentifier: UITableViewCellIdentifier)
@@ -59,8 +62,16 @@ extension OneViewController:UITableViewDelegate,UITableViewDataSource{
             newCity?.addAttribute(NSForegroundColorAttributeName, value: UIColor.red, range: NSRange.init(location: 0, length: 3))
         }
         cell.cityLabel.attributedText = newCity
-        
+        cell.contentView.transform = CGAffineTransform.init(scaleX: 0.9, y: 1)
         return cell
+    }
+    
+    public func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+
+        UIView.animate(withDuration: 0.8, animations: {
+            cell.contentView.transform = CGAffineTransform.init(scaleX: 1, y: 1)
+        })
+        
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){

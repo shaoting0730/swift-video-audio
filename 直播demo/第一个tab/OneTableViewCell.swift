@@ -30,7 +30,6 @@ class OneTableViewCell: UITableViewCell {
     //大图
     lazy var userBigImg:UIImageView = {
         let imgView = UIImageView.init(frame: CGRect.zero)
-        imgView.alpha = 0
         return imgView
     }()
     
@@ -39,9 +38,7 @@ class OneTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.setupUI()
         self.addCons()
-        UIView.animate(withDuration: 2, animations: {
-            self.userBigImg.alpha = 1
-        })
+
         
     }
     func setupUI(){

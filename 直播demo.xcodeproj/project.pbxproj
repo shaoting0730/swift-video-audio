@@ -38,6 +38,7 @@
 		6CD0621F1E8128D10001FC76 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD0621C1E8128D10001FC76 /* PlayerViewController.swift */; };
 		6CD062201E8128D10001FC76 /* OneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD0621E1E8128D10001FC76 /* OneViewController.swift */; };
 		6CD062231E8129610001FC76 /* NetWorkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD062221E8129610001FC76 /* NetWorkManager.swift */; };
+		6CD873CD1EE16FA4004D1B2F /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6CD873CC1EE16FA4004D1B2F /* start.mp3 */; };
 		6CE86D581E89EA3300A8EB5A /* TwoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE86D571E89EA3300A8EB5A /* TwoViewModel.swift */; };
 		6CE86D5A1E89EADB00A8EB5A /* TwoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE86D591E89EADB00A8EB5A /* TwoTableViewCell.swift */; };
 /* End PBXBuildFile section */
@@ -101,6 +102,7 @@
 		6CD0621C1E8128D10001FC76 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		6CD0621E1E8128D10001FC76 /* OneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneViewController.swift; sourceTree = "<group>"; };
 		6CD062221E8129610001FC76 /* NetWorkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkManager.swift; sourceTree = "<group>"; };
+		6CD873CC1EE16FA4004D1B2F /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start.mp3; sourceTree = "<group>"; };
 		6CE86D571E89EA3300A8EB5A /* TwoViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoViewModel.swift; sourceTree = "<group>"; };
 		6CE86D591E89EADB00A8EB5A /* TwoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -196,6 +198,7 @@
 		6CD061E41E811EB80001FC76 /* 直播demo */ = {
 			isa = PBXGroup;
 			children = (
+				6CD873CC1EE16FA4004D1B2F /* start.mp3 */,
 				6C26BEC01E84FBB1003A7478 /* IJKMediaFramework.framework */,
 				6CD062211E8129120001FC76 /* tools */,
 				6CD0621B1E8128D10001FC76 /* 第二个tab */,
@@ -404,6 +407,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CD061ED1E811EB80001FC76 /* Assets.xcassets in Resources */,
+				6CD873CD1EE16FA4004D1B2F /* start.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

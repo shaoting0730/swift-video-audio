@@ -8,11 +8,13 @@
 
 import UIKit
 import SDWebImage
+import AVFoundation
 fileprivate let UITableViewCellIdentifier = "UITableViewCellIdentifier"
 class OneViewController: UIViewController {
     var oneModel = [OneModel]()
     var isAnimation:Bool?
     var y:CGFloat = 0
+    var player: AVAudioPlayer?
 
     fileprivate lazy var tableView:UITableView = {
         let tableView = UITableView.init(frame: UIScreen.main.bounds)
@@ -26,7 +28,8 @@ class OneViewController: UIViewController {
         super.viewDidLoad()
         tableView.rowHeight = 300
         view.addSubview(tableView)
-        
+        self.player?.delegate = self
+
         OneModel.loadData { (data) in
             self.oneModel = data
             self.tableView.reloadData()
@@ -41,7 +44,7 @@ class OneViewController: UIViewController {
     
 }
 
-extension OneViewController:UITableViewDelegate,UITableViewDataSource{
+extension OneViewController:UITableViewDelegate,UITableViewDataSource,AVAudioPlayerDelegate{
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         return oneModel.count
     }
@@ -75,6 +78,14 @@ extension OneViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
+        let path = Bundle.main.path(forResource: "start", ofType: "mp3")
+        let data = NSData.init(contentsOfFile: path!)
+        self.player = try? AVAudioPlayer.init(data: data! as Data)
+        self.player?.updateMeters()
+        self.player?.prepareToPlay()
+        self.player?.play()
+        
+    
         let  stream_addr = oneModel[indexPath.row].stream_addr
         let portrait = oneModel[indexPath.row].user?.portrait
         let videoVC = VideoViewController()

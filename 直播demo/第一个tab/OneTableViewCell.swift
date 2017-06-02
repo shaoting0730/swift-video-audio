@@ -12,32 +12,37 @@ import SDWebImage
 class OneTableViewCell: UITableViewCell {
     //头像
     lazy var userimageView:UIImageView = {
-       let imgView = UIImageView.init(frame: CGRect.zero)
-       imgView.layer.masksToBounds = true
-       imgView.layer.cornerRadius = 6
-       return imgView
+        let imgView = UIImageView.init(frame: CGRect.zero)
+        imgView.layer.masksToBounds = true
+        imgView.layer.cornerRadius = 6
+        return imgView
     }()
     //名字
-     lazy var nameLabel:UILabel = {
+    lazy var nameLabel:UILabel = {
         let label = UILabel.init(frame: CGRect.zero)
         return label
     }()
     //城市
     lazy var cityLabel:UILabel = {
-       let label = UILabel.init(frame: CGRect.zero)
-       return label
+        let label = UILabel.init(frame: CGRect.zero)
+        return label
     }()
     //大图
     lazy var userBigImg:UIImageView = {
         let imgView = UIImageView.init(frame: CGRect.zero)
+        imgView.alpha = 0
         return imgView
     }()
     
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupUI()
-        addCons()
+        self.setupUI()
+        self.addCons()
+        UIView.animate(withDuration: 2, animations: {
+            self.userBigImg.alpha = 1
+        })
+        
     }
     func setupUI(){
         contentView.addSubview(userimageView)
@@ -68,7 +73,7 @@ class OneTableViewCell: UITableViewCell {
             make.height.equalTo(230)
             make.topMargin.equalTo(userimageView.snp.bottom).offset(10)
         }
-
+        
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

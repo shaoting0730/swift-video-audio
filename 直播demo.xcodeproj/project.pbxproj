@@ -8,9 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		606CCC977100E94BA88B47C5 /* Pods___demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253E7DC0E2E5CC585B4CA6AB /* Pods___demo.framework */; };
-		6C04DDFB1EE5038100700313 /* ThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C04DDFA1EE5038100700313 /* ThreeViewController.swift */; };
 		6C04DDFD1EE5039A00700313 /* FourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C04DDFC1EE5039A00700313 /* FourViewController.swift */; };
 		6C04DDFF1EE503AF00700313 /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6C04DDFE1EE503AF00700313 /* start.mp3 */; };
+		6C04DE051EE538F100700313 /* ThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C04DE041EE538F100700313 /* ThreeViewController.swift */; };
+		6C04DE091EE5396A00700313 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C04DE081EE5396A00700313 /* TableViewController.swift */; };
+		6C04DE0C1EE539DB00700313 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C04DE0B1EE539DB00700313 /* CollectionViewController.swift */; };
+		6C04DE0E1EE54C8C00700313 /* food.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C04DE0D1EE54C8C00700313 /* food.json */; };
 		6C0C88A31E836F0400A185B5 /* OneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0C88A21E836F0400A185B5 /* OneModel.swift */; };
 		6C0C88AB1E83968300A185B5 /* OneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0C88AA1E83968300A185B5 /* OneTableViewCell.swift */; };
 		6C26BEBF1E84F71C003A7478 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C26BEBE1E84F71C003A7478 /* VideoViewController.swift */; };
@@ -66,9 +69,12 @@
 		0588688EFDC96D4B7892D934 /* Pods-直播demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-直播demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-直播demo/Pods-直播demo.release.xcconfig"; sourceTree = "<group>"; };
 		06A3BD817F22F03257008175 /* Pods-直播demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-直播demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-直播demo/Pods-直播demo.debug.xcconfig"; sourceTree = "<group>"; };
 		253E7DC0E2E5CC585B4CA6AB /* Pods___demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___demo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6C04DDFA1EE5038100700313 /* ThreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThreeViewController.swift; path = "第三个tab/ThreeViewController.swift"; sourceTree = "<group>"; };
 		6C04DDFC1EE5039A00700313 /* FourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FourViewController.swift; path = "第四个tab/FourViewController.swift"; sourceTree = "<group>"; };
 		6C04DDFE1EE503AF00700313 /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start.mp3; sourceTree = "<group>"; };
+		6C04DE041EE538F100700313 /* ThreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThreeViewController.swift; path = "第三个tab/ThreeViewController.swift"; sourceTree = "<group>"; };
+		6C04DE081EE5396A00700313 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		6C04DE0B1EE539DB00700313 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		6C04DE0D1EE54C8C00700313 /* food.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = food.json; sourceTree = "<group>"; };
 		6C0C88A21E836F0400A185B5 /* OneModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneModel.swift; sourceTree = "<group>"; };
 		6C0C88AA1E83968300A185B5 /* OneTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneTableViewCell.swift; sourceTree = "<group>"; };
 		6C26BEBE1E84F71C003A7478 /* VideoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
@@ -154,7 +160,9 @@
 		6C04DDF61EE5026600700313 /* 第三个tab */ = {
 			isa = PBXGroup;
 			children = (
-				6C04DDFA1EE5038100700313 /* ThreeViewController.swift */,
+				6C04DE071EE5395900700313 /* CollectionView联动 */,
+				6C04DE061EE5394500700313 /* TableView联动 */,
+				6C04DE041EE538F100700313 /* ThreeViewController.swift */,
 			);
 			name = "第三个tab";
 			sourceTree = "<group>";
@@ -165,6 +173,25 @@
 				6C04DDFC1EE5039A00700313 /* FourViewController.swift */,
 			);
 			name = "第四个tab";
+			sourceTree = "<group>";
+		};
+		6C04DE061EE5394500700313 /* TableView联动 */ = {
+			isa = PBXGroup;
+			children = (
+				6C04DE081EE5396A00700313 /* TableViewController.swift */,
+				6C04DE0D1EE54C8C00700313 /* food.json */,
+			);
+			name = "TableView联动";
+			path = "第三个tab/TableView联动";
+			sourceTree = "<group>";
+		};
+		6C04DE071EE5395900700313 /* CollectionView联动 */ = {
+			isa = PBXGroup;
+			children = (
+				6C04DE0B1EE539DB00700313 /* CollectionViewController.swift */,
+			);
+			name = "CollectionView联动";
+			path = "第三个tab/CollectionView联动";
 			sourceTree = "<group>";
 		};
 		6C9467EC1E86172C00D245F9 /* 动画支持 */ = {
@@ -428,6 +455,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C04DE0E1EE54C8C00700313 /* food.json in Resources */,
 				6CD061ED1E811EB80001FC76 /* Assets.xcassets in Resources */,
 				6C04DDFF1EE503AF00700313 /* start.mp3 in Resources */,
 			);
@@ -509,13 +537,15 @@
 				6C726D761E84AC7C005B9063 /* UserModel.swift in Sources */,
 				6C0C88A31E836F0400A185B5 /* OneModel.swift in Sources */,
 				6C04DDFD1EE5039A00700313 /* FourViewController.swift in Sources */,
+				6C04DE091EE5396A00700313 /* TableViewController.swift in Sources */,
 				6CD061E61E811EB80001FC76 /* AppDelegate.swift in Sources */,
 				6C9467F31E86172C00D245F9 /* DMHeartFlyView.m in Sources */,
 				6CA7B8E11E89147600C1095F /* TwoModel.swift in Sources */,
 				6CD062201E8128D10001FC76 /* OneViewController.swift in Sources */,
+				6C04DE0C1EE539DB00700313 /* CollectionViewController.swift in Sources */,
 				6C0C88AB1E83968300A185B5 /* OneTableViewCell.swift in Sources */,
-				6C04DDFB1EE5038100700313 /* ThreeViewController.swift in Sources */,
 				6CA7B8E31E891A4300C1095F /* TwoViewController.swift in Sources */,
+				6C04DE051EE538F100700313 /* ThreeViewController.swift in Sources */,
 				6CE86D5A1E89EADB00A8EB5A /* TwoTableViewCell.swift in Sources */,
 				6CD0621F1E8128D10001FC76 /* PlayerViewController.swift in Sources */,
 				6CE86D581E89EA3300A8EB5A /* TwoViewModel.swift in Sources */,

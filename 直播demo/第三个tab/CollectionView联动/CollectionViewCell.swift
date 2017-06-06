@@ -17,15 +17,15 @@ class CollectionViewCell: UICollectionViewCell {
         imageV.contentMode = .scaleAspectFit
         contentView.addSubview(imageV)
         
-        nameLabel.frame = CGRect.init(x: 2, y: frame.size.width + 2, width: frame.size.width - 4, height: 20)
+        nameLabel.frame = CGRect.init(x: 2, y: frame.size.width - 20 , width: frame.size.width - 4, height: 20)
         nameLabel.font = UIFont.systemFont(ofSize: 13)
         nameLabel.textAlignment = .center
         contentView.addSubview(nameLabel)
         
     }
-    func setDatas(){
-        nameLabel.text = "33"
-        imageV.image = #imageLiteral(resourceName: "1_selected")
+    func setDatas(model:SubCategoryModel){
+        nameLabel.text = model.name
+        imageV.sd_setImage(with: URL.init(string: model.iconUrl!))
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

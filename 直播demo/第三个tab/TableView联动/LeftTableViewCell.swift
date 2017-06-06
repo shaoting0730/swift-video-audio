@@ -21,6 +21,8 @@ class LeftTableViewCell: UITableViewCell {
         selectionStyle = .none
 
         nameLabel.frame = CGRect(x: 10, y: 10, width: 60, height: 40)
+        nameLabel.numberOfLines = 0
+        nameLabel.font = UIFont.systemFont(ofSize: 15)
         contentView.addSubview(nameLabel)
 
         yellowView.frame = CGRect(x: 0, y: 5, width: 5, height: 45)

@@ -9,12 +9,20 @@
 import UIKit
 fileprivate let  LEFTTABLECELL = "LEFTTABLECELL"
 fileprivate let  RIGHTCOLLECTIONCELL = "RIGHTCOLLECTIONCELL"
+fileprivate let  RIGHTCOLLECTIONHEADER = "RIGHTCOLLECTIONHEADER"
 class CollectionViewController: UIViewController {
+    fileprivate lazy var categoryModel = [CollectionViewCategoryModel]()
+    fileprivate lazy var subCategoryModel = [[SubCategoryModel]]()
+    
+    fileprivate var selectIndex = 0
+    fileprivate var isScrollDown = true
+    fileprivate var lastOffsetY : CGFloat = 0.0
+    
     fileprivate lazy var leftTableView:UITableView = {
         let tableView = UITableView.init(frame: CGRect.zero)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = 55
+        tableView.rowHeight = 60
         tableView.register(LeftTableViewCell.self, forCellReuseIdentifier: LEFTTABLECELL)
         return tableView
     }()
@@ -34,6 +42,7 @@ class CollectionViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.backgroundColor = UIColor.white
         collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: RIGHTCOLLECTIONCELL)
+        collectionView.register(CollectionViewHeaderView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: RIGHTCOLLECTIONHEADER)
         return collectionView
     }()
     
@@ -56,6 +65,18 @@ class CollectionViewController: UIViewController {
         let datas =  dict?["data"] as? [String : AnyObject]
         let categories = datas?["categories"] as? [[String:AnyObject]]
         
+        for category in categories! {
+            let model = CollectionViewCategoryModel.init(dict: category)
+            categoryModel.append(model)
+            
+            guard let subcategories = model.subcategories else { continue }
+            
+            var datas = [SubCategoryModel]()
+            for subcategory in subcategories {
+                datas.append(subcategory)
+            }
+            subCategoryModel.append(datas)
+        }
         
         
     }
@@ -88,30 +109,47 @@ class CollectionViewController: UIViewController {
 
 }
 
+
+
 extension CollectionViewController:UITableViewDelegate,UITableViewDataSource{
     //row
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
-       return 11
+       return categoryModel.count
     }
     //cell
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: LEFTTABLECELL, for: indexPath) as! LeftTableViewCell
+        cell.nameLabel.text = categoryModel[indexPath.row].name
         return cell
     }
 
 }
 
 extension CollectionViewController:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+    //item
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 7
+        return subCategoryModel[section].count
     }
+    //section
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 5
+        return subCategoryModel.count
     }
+    //cell
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RIGHTCOLLECTIONCELL, for: indexPath) as! CollectionViewCell
-        cell.setDatas()
+        let model = subCategoryModel[indexPath.section][indexPath.row]
+        cell.setDatas(model: model)
         return cell
     }
-
+    //header height
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.width, height: 30)
+    }
+    //headerVIew
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let view = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: RIGHTCOLLECTIONHEADER, for: indexPath) as! CollectionViewHeaderView
+            let model = categoryModel[indexPath.section]
+            view.setDatas(model: model)
+        return view
+    }
 }

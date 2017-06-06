@@ -38,7 +38,6 @@ class OneModel: NSObject {
         super.setValue(value, forKey: key)
         if "creator" == key {
             user = UserModel.init(dict: value as! [String : AnyObject])//创建一个Usermodel
-            return
         }
     }
     

@@ -89,7 +89,7 @@ class TableViewController: UIViewController {
 }
 
 extension TableViewController:UITableViewDelegate,UITableViewDataSource{
-    //section
+    //row
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int{
         if tableView == leftTableView {
              return categoryModel.count
@@ -97,7 +97,7 @@ extension TableViewController:UITableViewDelegate,UITableViewDataSource{
              return foodModel[section].count
         }
     }
-    //row
+    //section
     public func numberOfSections(in tableView: UITableView) -> Int {
         if tableView == leftTableView {
            return 1

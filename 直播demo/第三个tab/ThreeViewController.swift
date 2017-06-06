@@ -56,7 +56,7 @@ class ThreeViewController: UIViewController {
     }
     
     func collectionAction(){
-        
+       self.navigationController?.pushViewController(CollectionViewController(), animated: true)
     }
     
     override func didReceiveMemoryWarning() {

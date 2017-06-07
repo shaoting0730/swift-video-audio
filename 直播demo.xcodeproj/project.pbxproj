@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		606CCC977100E94BA88B47C5 /* Pods___demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253E7DC0E2E5CC585B4CA6AB /* Pods___demo.framework */; };
-		6C04DDFD1EE5039A00700313 /* FourViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C04DDFC1EE5039A00700313 /* FourViewController.swift */; };
 		6C04DDFF1EE503AF00700313 /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6C04DDFE1EE503AF00700313 /* start.mp3 */; };
 		6C04DE051EE538F100700313 /* ThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C04DE041EE538F100700313 /* ThreeViewController.swift */; };
 		6C0C88A31E836F0400A185B5 /* OneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0C88A21E836F0400A185B5 /* OneModel.swift */; };
@@ -47,10 +46,10 @@
 		6CA7B8DF1E88A76B00C1095F /* emmitParticles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA7B8DE1E88A76B00C1095F /* emmitParticles.swift */; };
 		6CA7B8E11E89147600C1095F /* TwoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA7B8E01E89147600C1095F /* TwoModel.swift */; };
 		6CA7B8E31E891A4300C1095F /* TwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CA7B8E21E891A4300C1095F /* TwoViewController.swift */; };
-		6CBFD8901EE7CEC400DE5DCC /* extensionBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBFD88F1EE7CEC400DE5DCC /* extensionBtn.swift */; };
-		6CBFD8921EE7CEE900DE5DCC /* BtnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBFD8911EE7CEE900DE5DCC /* BtnViewController.swift */; };
-		6CBFD8951EE7D1CA00DE5DCC /* TimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBFD8941EE7D1CA00DE5DCC /* TimeLineViewController.swift */; };
-		6CBFD8971EE7D28200DE5DCC /* TimeLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBFD8961EE7D28200DE5DCC /* TimeLineCell.swift */; };
+		6CBFD8C61EE7E73000DE5DCC /* BtnViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBFD8C11EE7E73000DE5DCC /* BtnViewController.swift */; };
+		6CBFD8C71EE7E73000DE5DCC /* extensionBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBFD8C21EE7E73000DE5DCC /* extensionBtn.swift */; };
+		6CBFD8C81EE7E73000DE5DCC /* TimeLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBFD8C41EE7E73000DE5DCC /* TimeLineCell.swift */; };
+		6CBFD8C91EE7E73000DE5DCC /* TimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBFD8C51EE7E73000DE5DCC /* TimeLineViewController.swift */; };
 		6CD061E61E811EB80001FC76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD061E51E811EB80001FC76 /* AppDelegate.swift */; };
 		6CD061ED1E811EB80001FC76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CD061EC1E811EB80001FC76 /* Assets.xcassets */; };
 		6CD061FB1E811EB80001FC76 /* __demoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD061FA1E811EB80001FC76 /* __demoTests.swift */; };
@@ -84,7 +83,6 @@
 		0588688EFDC96D4B7892D934 /* Pods-直播demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-直播demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-直播demo/Pods-直播demo.release.xcconfig"; sourceTree = "<group>"; };
 		06A3BD817F22F03257008175 /* Pods-直播demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-直播demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-直播demo/Pods-直播demo.debug.xcconfig"; sourceTree = "<group>"; };
 		253E7DC0E2E5CC585B4CA6AB /* Pods___demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___demo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6C04DDFC1EE5039A00700313 /* FourViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FourViewController.swift; path = "第四个tab/FourViewController.swift"; sourceTree = "<group>"; };
 		6C04DDFE1EE503AF00700313 /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start.mp3; sourceTree = "<group>"; };
 		6C04DE041EE538F100700313 /* ThreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThreeViewController.swift; path = "第三个tab/ThreeViewController.swift"; sourceTree = "<group>"; };
 		6C0C88A21E836F0400A185B5 /* OneModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneModel.swift; sourceTree = "<group>"; };
@@ -125,10 +123,10 @@
 		6CA7B8DE1E88A76B00C1095F /* emmitParticles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = emmitParticles.swift; sourceTree = "<group>"; };
 		6CA7B8E01E89147600C1095F /* TwoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoModel.swift; sourceTree = "<group>"; };
 		6CA7B8E21E891A4300C1095F /* TwoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwoViewController.swift; sourceTree = "<group>"; };
-		6CBFD88F1EE7CEC400DE5DCC /* extensionBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensionBtn.swift; sourceTree = "<group>"; };
-		6CBFD8911EE7CEE900DE5DCC /* BtnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BtnViewController.swift; sourceTree = "<group>"; };
-		6CBFD8941EE7D1CA00DE5DCC /* TimeLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineViewController.swift; sourceTree = "<group>"; };
-		6CBFD8961EE7D28200DE5DCC /* TimeLineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineCell.swift; sourceTree = "<group>"; };
+		6CBFD8C11EE7E73000DE5DCC /* BtnViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BtnViewController.swift; sourceTree = "<group>"; };
+		6CBFD8C21EE7E73000DE5DCC /* extensionBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensionBtn.swift; sourceTree = "<group>"; };
+		6CBFD8C41EE7E73000DE5DCC /* TimeLineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineCell.swift; sourceTree = "<group>"; };
+		6CBFD8C51EE7E73000DE5DCC /* TimeLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineViewController.swift; sourceTree = "<group>"; };
 		6CD061E21E811EB80001FC76 /* 直播demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "直播demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CD061E51E811EB80001FC76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CD061EC1E811EB80001FC76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -190,21 +188,13 @@
 		6C04DDF61EE5026600700313 /* 第三个tab */ = {
 			isa = PBXGroup;
 			children = (
+				6CBFD8C01EE7E73000DE5DCC /* 按钮扩展 */,
+				6CBFD8C31EE7E73000DE5DCC /* 时间轴效果 */,
 				6C8452861EE68C6800E1AA66 /* CollectionView联动 */,
 				6C84528C1EE68C6800E1AA66 /* TableView联动 */,
 				6C04DE041EE538F100700313 /* ThreeViewController.swift */,
 			);
 			name = "第三个tab";
-			sourceTree = "<group>";
-		};
-		6C04DDF71EE5027E00700313 /* 第四个tab */ = {
-			isa = PBXGroup;
-			children = (
-				6CBFD8931EE7D1B500DE5DCC /* 时间轴效果 */,
-				6CBFD88E1EE7CEC400DE5DCC /* 按钮扩展 */,
-				6C04DDFC1EE5039A00700313 /* FourViewController.swift */,
-			);
-			name = "第四个tab";
 			sourceTree = "<group>";
 		};
 		6C8452861EE68C6800E1AA66 /* CollectionView联动 */ = {
@@ -263,24 +253,24 @@
 			path = "爱心";
 			sourceTree = "<group>";
 		};
-		6CBFD88E1EE7CEC400DE5DCC /* 按钮扩展 */ = {
+		6CBFD8C01EE7E73000DE5DCC /* 按钮扩展 */ = {
 			isa = PBXGroup;
 			children = (
-				6CBFD88F1EE7CEC400DE5DCC /* extensionBtn.swift */,
-				6CBFD8911EE7CEE900DE5DCC /* BtnViewController.swift */,
+				6CBFD8C11EE7E73000DE5DCC /* BtnViewController.swift */,
+				6CBFD8C21EE7E73000DE5DCC /* extensionBtn.swift */,
 			);
 			name = "按钮扩展";
-			path = "第四个tab/按钮扩展";
+			path = "第三个tab/按钮扩展";
 			sourceTree = "<group>";
 		};
-		6CBFD8931EE7D1B500DE5DCC /* 时间轴效果 */ = {
+		6CBFD8C31EE7E73000DE5DCC /* 时间轴效果 */ = {
 			isa = PBXGroup;
 			children = (
-				6CBFD8961EE7D28200DE5DCC /* TimeLineCell.swift */,
-				6CBFD8941EE7D1CA00DE5DCC /* TimeLineViewController.swift */,
+				6CBFD8C41EE7E73000DE5DCC /* TimeLineCell.swift */,
+				6CBFD8C51EE7E73000DE5DCC /* TimeLineViewController.swift */,
 			);
 			name = "时间轴效果";
-			path = "第四个tab/时间轴效果";
+			path = "第三个tab/时间轴效果";
 			sourceTree = "<group>";
 		};
 		6CD061D91E811EB80001FC76 = {
@@ -310,7 +300,6 @@
 			children = (
 				6C26BEC01E84FBB1003A7478 /* IJKMediaFramework.framework */,
 				6CD062211E8129120001FC76 /* tools */,
-				6C04DDF71EE5027E00700313 /* 第四个tab */,
 				6C04DDF61EE5026600700313 /* 第三个tab */,
 				6CD0621B1E8128D10001FC76 /* 第二个tab */,
 				6CD0621D1E8128D10001FC76 /* 第一个tab */,
@@ -599,27 +588,26 @@
 				6CD062231E8129610001FC76 /* NetWorkManager.swift in Sources */,
 				6CD062141E81202C0001FC76 /* TabBarViewController.swift in Sources */,
 				6CA7B8DF1E88A76B00C1095F /* emmitParticles.swift in Sources */,
-				6CBFD8971EE7D28200DE5DCC /* TimeLineCell.swift in Sources */,
 				6C8452A11EE68C6800E1AA66 /* TableViewHeaderView.swift in Sources */,
+				6CBFD8C61EE7E73000DE5DCC /* BtnViewController.swift in Sources */,
 				6C8452A51EE694DF00E1AA66 /* CollectionViewCell.swift in Sources */,
 				6C26BEBF1E84F71C003A7478 /* VideoViewController.swift in Sources */,
 				6C84529C1EE68C6800E1AA66 /* foodModel.swift in Sources */,
 				6C726D761E84AC7C005B9063 /* UserModel.swift in Sources */,
-				6CBFD8921EE7CEE900DE5DCC /* BtnViewController.swift in Sources */,
 				6C0C88A31E836F0400A185B5 /* OneModel.swift in Sources */,
 				6C84529A1EE68C6800E1AA66 /* CategoryModel.swift in Sources */,
-				6C04DDFD1EE5039A00700313 /* FourViewController.swift in Sources */,
 				6CD061E61E811EB80001FC76 /* AppDelegate.swift in Sources */,
-				6CBFD8951EE7D1CA00DE5DCC /* TimeLineViewController.swift in Sources */,
 				6C8452A31EE68F8500E1AA66 /* CollectionViewController.swift in Sources */,
+				6CBFD8C91EE7E73000DE5DCC /* TimeLineViewController.swift in Sources */,
 				6C9467F31E86172C00D245F9 /* DMHeartFlyView.m in Sources */,
 				6CA7B8E11E89147600C1095F /* TwoModel.swift in Sources */,
 				6C8452A01EE68C6800E1AA66 /* TableViewController.swift in Sources */,
 				6CD062201E8128D10001FC76 /* OneViewController.swift in Sources */,
+				6CBFD8C81EE7E73000DE5DCC /* TimeLineCell.swift in Sources */,
 				6C0C88AB1E83968300A185B5 /* OneTableViewCell.swift in Sources */,
 				6C84529D1EE68C6800E1AA66 /* LeftTableViewCell.swift in Sources */,
 				6C8452A71EE6951600E1AA66 /* CollectionViewHeaderView.swift in Sources */,
-				6CBFD8901EE7CEC400DE5DCC /* extensionBtn.swift in Sources */,
+				6CBFD8C71EE7E73000DE5DCC /* extensionBtn.swift in Sources */,
 				6CA7B8E31E891A4300C1095F /* TwoViewController.swift in Sources */,
 				6C04DE051EE538F100700313 /* ThreeViewController.swift in Sources */,
 				6CE86D5A1E89EADB00A8EB5A /* TwoTableViewCell.swift in Sources */,

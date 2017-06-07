@@ -9,46 +9,34 @@
 import UIKit
 
 class ThreeViewController: UIViewController {
-    fileprivate lazy var tableBtn:UIButton = {
-        let btn = UIButton.init(frame: CGRect.zero)
-        btn.setTitle("tableView联动", for: .normal)
-        btn.setTitleColor(UIColor.black, for: .normal)
-        btn.addTarget(self, action:#selector(ThreeViewController.tableAction) , for: .touchUpInside)
-        return btn
-    }()
-    
-    fileprivate lazy var collectionBtn:UIButton = {
-        let btn = UIButton.init(frame: CGRect.zero)
-        btn.setTitle("colletionView联动", for: .normal)
-        btn.setTitleColor(UIColor.black, for: .normal)
-        btn.addTarget(self, action: #selector(ThreeViewController.collectionAction), for: .touchUpInside)
-        return btn
-    }()
+    let SCREENW =  UIScreen.main.bounds.size.width
     override func viewDidLoad() {
         super.viewDidLoad()
-        addSubView()
-        addCons()
-        // Do any additional setup after loading the view.
-    }
-    
-    func addSubView(){
-        view.addSubview(tableBtn)
-        view.addSubview(collectionBtn)
-    }
-    
-    func addCons(){
-        tableBtn.snp.makeConstraints { (make) in
-            make.width.equalTo(UIScreen.main.bounds.size.width)
-            make.height.equalTo(50)
-            make.top.equalTo(64)
-        }
         
-        collectionBtn.snp.makeConstraints { (make) in
-            make.width.equalTo(UIScreen.main.bounds.size.width)
-            make.height.equalTo(50)
-            make.top.equalTo(tableBtn.snp.bottom).offset(1)
-        }
+        let btn1  = UIButton.init(frame: CGRect.init(x: 0, y: 74, width: SCREENW * 0.5 - 5, height: 50))
+        btn1.setTitle("tableView联动", for: .normal)
+        btn1.setTitleColor(UIColor.red, for: .normal)
+        btn1.addTarget(self, action: #selector(ThreeViewController.tableAction), for: .touchUpInside)
+        self.view.addSubview(btn1)
         
+        let btn2  = UIButton.init(frame: CGRect.init(x: SCREENW * 0.5, y: 74, width: SCREENW * 0.5 - 5, height: 50))
+        btn2.setTitle("collectionView联动", for: .normal)
+        btn2.setTitleColor(UIColor.red, for: .normal)
+        btn2.addTarget(self, action: #selector(ThreeViewController.collectionAction), for: .touchUpInside)
+        self.view.addSubview(btn2)
+        
+        let btn3  = UIButton.init(frame: CGRect.init(x: 0, y: 74 + 60, width: SCREENW * 0.5 - 5, height: 50))
+        btn3.setTitle("按钮扩展", for: .normal)
+        btn3.setTitleColor(UIColor.red, for: .normal)
+        btn3.addTarget(self, action: #selector(ThreeViewController.btnExtensionAction), for: .touchUpInside)
+        self.view.addSubview(btn3)
+        
+        let btn4  = UIButton.init(frame: CGRect.init(x: SCREENW * 0.5, y: 74 + 60, width: SCREENW * 0.5 - 5, height: 50))
+        btn4.setTitle("时间轴", for: .normal)
+        btn4.setTitleColor(UIColor.red, for: .normal)
+        btn4.addTarget(self, action: #selector(ThreeViewController.timeLineAction), for: .touchUpInside)
+        self.view.addSubview(btn4)
+
     }
     
     func tableAction(){
@@ -58,6 +46,15 @@ class ThreeViewController: UIViewController {
     func collectionAction(){
        self.navigationController?.pushViewController(CollectionViewController(), animated: true)
     }
+    
+    func btnExtensionAction(){
+        self.navigationController?.pushViewController(BtnViewController(), animated: false)
+    }
+    
+    func timeLineAction(){
+        self.navigationController?.pushViewController(TimeLineViewController(), animated: false)
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

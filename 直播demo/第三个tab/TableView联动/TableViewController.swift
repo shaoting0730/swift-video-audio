@@ -84,7 +84,13 @@ class TableViewController: UIViewController {
             make.width.equalTo(UIScreen.main.bounds.size.width - 80)
         }
     }
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
     
 }
 

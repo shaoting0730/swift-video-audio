@@ -36,6 +36,12 @@ class ThreeViewController: UIViewController {
         btn4.setTitleColor(UIColor.red, for: .normal)
         btn4.addTarget(self, action: #selector(ThreeViewController.timeLineAction), for: .touchUpInside)
         self.view.addSubview(btn4)
+        
+        let btn5  = UIButton.init(frame: CGRect.init(x: 0, y: 74 + 60 + 60, width: SCREENW * 0.5 - 5, height: 50))
+        btn5.setTitle("导航栏渐变+下拉放大", for: .normal)
+        btn5.setTitleColor(UIColor.red, for: .normal)
+        btn5.addTarget(self, action: #selector(ThreeViewController.navigationAction), for: .touchUpInside)
+        self.view.addSubview(btn5)
 
     }
     
@@ -55,6 +61,9 @@ class ThreeViewController: UIViewController {
         self.navigationController?.pushViewController(TimeLineViewController(), animated: false)
     }
     
+    func navigationAction(){
+//        self.navigationController?.pushViewController(NavigationAndDownViewController(), animated: false)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

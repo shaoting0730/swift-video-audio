@@ -28,7 +28,13 @@ class BtnViewController: UIViewController {
         btn4.setImageAndTitle(imageName: "gift", title: "我是按钮", type: .PositionRight, Space: 0.0)
         
     }
-
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

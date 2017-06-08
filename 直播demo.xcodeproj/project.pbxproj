@@ -50,6 +50,7 @@
 		6CBFD8C71EE7E73000DE5DCC /* extensionBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBFD8C21EE7E73000DE5DCC /* extensionBtn.swift */; };
 		6CBFD8C81EE7E73000DE5DCC /* TimeLineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBFD8C41EE7E73000DE5DCC /* TimeLineCell.swift */; };
 		6CBFD8C91EE7E73000DE5DCC /* TimeLineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBFD8C51EE7E73000DE5DCC /* TimeLineViewController.swift */; };
+		6CBFD8CC1EE7E97E00DE5DCC /* NavigationAndDownViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CBFD8CB1EE7E97E00DE5DCC /* NavigationAndDownViewController.swift */; };
 		6CD061E61E811EB80001FC76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD061E51E811EB80001FC76 /* AppDelegate.swift */; };
 		6CD061ED1E811EB80001FC76 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6CD061EC1E811EB80001FC76 /* Assets.xcassets */; };
 		6CD061FB1E811EB80001FC76 /* __demoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CD061FA1E811EB80001FC76 /* __demoTests.swift */; };
@@ -127,6 +128,7 @@
 		6CBFD8C21EE7E73000DE5DCC /* extensionBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extensionBtn.swift; sourceTree = "<group>"; };
 		6CBFD8C41EE7E73000DE5DCC /* TimeLineCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineCell.swift; sourceTree = "<group>"; };
 		6CBFD8C51EE7E73000DE5DCC /* TimeLineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLineViewController.swift; sourceTree = "<group>"; };
+		6CBFD8CB1EE7E97E00DE5DCC /* NavigationAndDownViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationAndDownViewController.swift; sourceTree = "<group>"; };
 		6CD061E21E811EB80001FC76 /* 直播demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "直播demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6CD061E51E811EB80001FC76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6CD061EC1E811EB80001FC76 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 		6C04DDF61EE5026600700313 /* 第三个tab */ = {
 			isa = PBXGroup;
 			children = (
+				6CBFD8CA1EE7E92500DE5DCC /* 导航栏渐变+下拉放大 */,
 				6CBFD8C01EE7E73000DE5DCC /* 按钮扩展 */,
 				6CBFD8C31EE7E73000DE5DCC /* 时间轴效果 */,
 				6C8452861EE68C6800E1AA66 /* CollectionView联动 */,
@@ -271,6 +274,15 @@
 			);
 			name = "时间轴效果";
 			path = "第三个tab/时间轴效果";
+			sourceTree = "<group>";
+		};
+		6CBFD8CA1EE7E92500DE5DCC /* 导航栏渐变+下拉放大 */ = {
+			isa = PBXGroup;
+			children = (
+				6CBFD8CB1EE7E97E00DE5DCC /* NavigationAndDownViewController.swift */,
+			);
+			name = "导航栏渐变+下拉放大";
+			path = "第三个tab/导航栏渐变+下拉放大";
 			sourceTree = "<group>";
 		};
 		6CD061D91E811EB80001FC76 = {
@@ -610,6 +622,7 @@
 				6CBFD8C71EE7E73000DE5DCC /* extensionBtn.swift in Sources */,
 				6CA7B8E31E891A4300C1095F /* TwoViewController.swift in Sources */,
 				6C04DE051EE538F100700313 /* ThreeViewController.swift in Sources */,
+				6CBFD8CC1EE7E97E00DE5DCC /* NavigationAndDownViewController.swift in Sources */,
 				6CE86D5A1E89EADB00A8EB5A /* TwoTableViewCell.swift in Sources */,
 				6CD0621F1E8128D10001FC76 /* PlayerViewController.swift in Sources */,
 				6C8452A91EE6A20A00E1AA66 /* CollectionViewCategoryModel.swift in Sources */,

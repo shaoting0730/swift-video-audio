@@ -23,7 +23,7 @@ private var customTitleLabel: UILabel?
 // // 当导航栏透明的时候 加载在view上的标题
 private var viewTitleLabel: UILabel?
 
-class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
+class NavigationAndDownViewController: UIViewController , UITableViewDelegate, UITableViewDataSource{
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,11 +56,13 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
         let backBtn = UIButton(frame: CGRect(x: 0, y: 20, width: 40, height: 44))
         backBtn.setImage(UIImage(named: "back_0"), for: UIControlState())
         backView.addSubview(backBtn)
+        backBtn.addTarget(self, action: #selector(NavigationAndDownViewController.popAction), for: .touchUpInside)
         customBackBtn = backBtn
         
         // 返回按钮
         let btn = UIButton(frame: CGRect(x: 0, y: 20, width: 40, height: 44))
         btn.setImage(UIImage(named: "back_0"), for: UIControlState())
+        btn.addTarget(self, action: #selector(NavigationAndDownViewController.popAction), for: .touchUpInside)
         view.addSubview(btn)
         viewBackBtn = btn
         
@@ -68,6 +70,7 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
         let titleLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 80, height: 44))
         titleLabel.center = CGPoint(x: view.frame.width / 2, y: 20 + 22)
         titleLabel.text = "标题"
+        titleLabel.textAlignment = .center
         titleLabel.textColor = UIColor.white
         customTitleLabel = titleLabel
         customNavc?.addSubview(titleLabel)
@@ -76,6 +79,7 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
         let viewTitleLabe = UILabel(frame: CGRect(x: 0, y: 0, width: 80, height: 44))
         viewTitleLabe.center = CGPoint(x: view.frame.width / 2, y: 20 + 22)
         viewTitleLabe.text = "标题"
+        viewTitleLabe.textAlignment = .center
         viewTitleLabe.textColor = UIColor.black
         viewTitleLabel = viewTitleLabe
         view?.addSubview(titleLabel)
@@ -117,7 +121,19 @@ class ViewController: UIViewController , UITableViewDelegate, UITableViewDataSou
             customTitleLabel?.textColor = UIColor.white
         }
     }
+    func popAction(){
+        self.navigationController?.popViewController(animated: false)
+    }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
+        self.tabBarController?.tabBar.isHidden = false
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

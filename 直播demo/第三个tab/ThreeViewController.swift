@@ -38,10 +38,16 @@ class ThreeViewController: UIViewController {
         self.view.addSubview(btn4)
         
         let btn5  = UIButton.init(frame: CGRect.init(x: 0, y: 74 + 60 + 60, width: SCREENW * 0.5 - 5, height: 50))
-        btn5.setTitle("导航栏渐变+下拉放大", for: .normal)
+        btn5.setTitle("下拉放大+导航栏渐变", for: .normal)
         btn5.setTitleColor(UIColor.red, for: .normal)
         btn5.addTarget(self, action: #selector(ThreeViewController.navigationAction), for: .touchUpInside)
         self.view.addSubview(btn5)
+        
+        let btn6  = UIButton.init(frame: CGRect.init(x: SCREENW * 0.5, y: 74 + 60 + 60, width: SCREENW * 0.5 - 5, height: 50))
+        btn6.setTitle("分页控制器", for: .normal)
+        btn6.setTitleColor(UIColor.red, for: .normal)
+        btn6.addTarget(self, action: #selector(ThreeViewController.pageViewControllerAction), for: .touchUpInside)
+        self.view.addSubview(btn6)
 
     }
     
@@ -62,7 +68,11 @@ class ThreeViewController: UIViewController {
     }
     
     func navigationAction(){
-//        self.navigationController?.pushViewController(NavigationAndDownViewController(), animated: false)
+        self.navigationController?.pushViewController(NavigationAndDownViewController(), animated: false)
+    }
+    
+    func pageViewControllerAction(){
+         self.navigationController?.pushViewController(PageViewController(), animated: false)
     }
     
     override func didReceiveMemoryWarning() {

@@ -57,7 +57,7 @@
  ## 4.下拉放大 + 导航栏渐隐 <br/>
 感谢    *  [ 下拉放大 + 导航栏渐隐 ]( http://blog.csdn.net/wj610671226/article/details/50498175)   <br/>
  ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/%E4%B8%8B%E6%8B%89%E6%94%BE%E5%A4%A7%2B%E5%AF%BC%E8%88%AA%E6%A0%8F%E6%B8%90%E5%8F%98.gif) <br/>
-  ## 5.分页控制器 <br/>
+ ## 5.分页控制器 <br/>
 感谢    *  [ 分页控制器 ]( https://github.com/wubianxiaoxian/SKFPageView)   <br/>
  ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/%E5%88%86%E9%A1%B5%E6%8E%A7%E5%88%B6%E5%99%A8.gif) <br/>
  

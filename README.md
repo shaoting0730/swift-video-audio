@@ -48,16 +48,16 @@
 感谢  *  [ leejayID ]( https://github.com/leejayID/Linkage-Swift)   <br/>  
  ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/tableView%E8%81%94%E5%8A%A8.gif) <br/>
  ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/collectionVIew%E8%81%94%E5%8A%A8.gif) <br/>
-## 按钮 扩展
+## 2. 按钮 扩展 <br/>
 感谢 找不到来源了  <br/>
  ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/%E6%8C%89%E9%92%AE%E6%89%A9%E5%B1%95.png) <br/>
-## 时间轴效果  <br/>
+## 3.时间轴效果  <br/>
 感谢    *  [ 航歌 ]( http://www.hangge.com/blog/cache/detail_1383.html)   <br/>
  ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/%E6%97%B6%E9%97%B4%E8%BD%B4.png) <br/>
- ## 下拉放大 + 导航栏渐隐 <br/>
+ ## 4.下拉放大 + 导航栏渐隐 <br/>
 感谢    *  [ 下拉放大 + 导航栏渐隐 ]( http://blog.csdn.net/wj610671226/article/details/50498175)   <br/>
  ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/%E4%B8%8B%E6%8B%89%E6%94%BE%E5%A4%A7%2B%E5%AF%BC%E8%88%AA%E6%A0%8F%E6%B8%90%E5%8F%98.gif) <br/>
-  ## 分页控制器 <br/>
+  ## 5.分页控制器 <br/>
 感谢    *  [ 分页控制器 ]( https://github.com/wubianxiaoxian/SKFPageView)   <br/>
  ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/%E5%88%86%E9%A1%B5%E6%8E%A7%E5%88%B6%E5%99%A8.gif) <br/>
  

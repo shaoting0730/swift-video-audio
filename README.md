@@ -46,14 +46,14 @@
 
 ## 1.tableView联动 CollectionView联动 <br/>
 感谢  *  [ leejayID ]( https://github.com/leejayID/Linkage-Swift)   <br/>  
-  #效果截图:<br/>
+  #效果截图: <br/>
  ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/tableView%E8%81%94%E5%8A%A8.gif) <br/>
  ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/collectionVIew%E8%81%94%E5%8A%A8.gif) <br/>
 ## 按钮 扩展
-感谢 找不到来源了 <br/>
- #效果截图:<br/>
+感谢 找不到来源了  <br/>
+ #效果截图: <br/>
  ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/%E6%8C%89%E9%92%AE%E6%89%A9%E5%B1%95.png) <br/>
-## 时间轴效果 <br/>
+## 时间轴效果  <br/>
 感谢    *  [ 航歌 ]( http://www.hangge.com/blog/cache/detail_1383.html)   <br/>
  #效果截图:<br/>
  ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/%E6%97%B6%E9%97%B4%E8%BD%B4.png) <br/>

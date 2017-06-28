@@ -51,21 +51,7 @@ extension OneViewController:UITableViewDelegate,UITableViewDataSource,AVAudioPla
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCell(withIdentifier: UITableViewCellIdentifier, for: indexPath) as! OneTableViewCell
-       
-        cell.nameLabel.text = oneModel[indexPath.row].user?.nick
-        
-        let imgStr = oneModel[indexPath.row].user?.portrait
-        cell.userimageView.sd_setImage(with: URL.init(string: imgStr!))
-        cell.userBigImg.sd_setImage(with: URL.init(string: imgStr!))
-        
-       let city = oneModel[indexPath.row].city!
-        var newCity:NSMutableAttributedString?
-        if city.characters.count > 0 {
-            newCity =  NSMutableAttributedString.init(string: "来自:"+city)
-            newCity?.addAttribute(NSForegroundColorAttributeName, value: UIColor.red, range: NSRange.init(location: 0, length: 3))
-        }
-        cell.cityLabel.attributedText = newCity
-        cell.contentView.transform = CGAffineTransform.init(scaleX: 0.9, y: 1)
+        cell.oneModel = oneModel[indexPath.row]
         return cell
     }
     

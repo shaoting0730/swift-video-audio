@@ -10,6 +10,14 @@ import UIKit
 import SnapKit
 
 class TwoTableViewCell: UITableViewCell {
+    var twoModel:TwoModel?{
+        didSet{
+           let author = twoModel?.author!
+           let title = twoModel?.title!
+           titleAuthorLabel.text = title! + "-" + author!
+        }
+    }
+    
      lazy var titleAuthorLabel:UILabel = {
           let label = UILabel.init(frame: CGRect.zero)
           label.textColor  = UIColor.white

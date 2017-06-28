@@ -28,11 +28,7 @@ class TwoViewController: UIViewController {
         // 创建cell
         viewModel.cellRender = { indexPath,tablleView in
             let cell = tablleView.dequeueReusableCell(withIdentifier: TwoTableViewCellIdentifie, for: indexPath as IndexPath) as! TwoTableViewCell
-            
-            let author =   self.twoModel[indexPath.row].author!
-            let title = self.twoModel[indexPath.row].title!
-            cell.titleAuthorLabel.text = title + "--" + author
-            
+            cell.twoModel = self.twoModel[indexPath.row]
             return cell
         }
         // cell点击事件

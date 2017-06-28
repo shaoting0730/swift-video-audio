@@ -10,6 +10,25 @@ import UIKit
 import SnapKit
 import SDWebImage
 class OneTableViewCell: UITableViewCell {
+    var oneModel:OneModel?{
+        didSet{
+            nameLabel.text = oneModel?.user?.nick
+            
+            let imgStr = oneModel?.user?.portrait
+            userimageView.sd_setImage(with: URL.init(string: imgStr!))
+            userBigImg.sd_setImage(with: URL.init(string: imgStr!))
+            
+            let city = oneModel?.city!
+            var newCity:NSMutableAttributedString?
+            if (city?.characters.count)! > 0 {
+                newCity =  NSMutableAttributedString.init(string: "来自:"+city!)
+                newCity?.addAttribute(NSForegroundColorAttributeName, value: UIColor.red, range: NSRange.init(location: 0, length: 3))
+            }
+            cityLabel.attributedText = newCity
+            contentView.transform = CGAffineTransform.init(scaleX: 0.9, y: 1)
+        }
+    }
+    
     //头像
     lazy var userimageView:UIImageView = {
         let imgView = UIImageView.init(frame: CGRect.zero)
@@ -38,7 +57,7 @@ class OneTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.setupUI()
         self.addCons()
-
+        
         
     }
     func setupUI(){

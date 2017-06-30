@@ -14,7 +14,7 @@ class OneModel: NSObject {
    var stream_addr:String?  //视频地址
    var user:UserModel?  //用户信息模型
     class func loadData(OK: @escaping ([OneModel])->()){
-        NetWorkManager.post(url: "http://116.211.167.106/api/live/aggregation?uid=133825214&interest=1") { (data) in
+        NetWorkManager.requestData(url: "http://116.211.167.106/api/live/aggregation?uid=133825214&interest=1") { (data) in
             let livesAry = data["lives"]
             let model  = dict2Model(list: livesAry as! [[String : AnyObject]])
             OK(model)

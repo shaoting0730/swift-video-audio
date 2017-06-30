@@ -192,7 +192,7 @@ class PlayerViewController: UIViewController {
     //加载歌曲信息
     func loadSonginfo(){
         let url = "http://tingapi.ting.baidu.com/v1/restserver/ting?method=baidu.ting.song.play&songid=" + song_id
-        NetWorkManager.post(url: url) { (data) in
+        NetWorkManager.requestData(url: url) { (data) in
             var  songinfoDic = data as [String : AnyObject]  //歌曲信息字典
             var songinfo:[String:AnyObject] = songinfoDic["songinfo"] as! [String : AnyObject]
             var bitrate:[String:AnyObject] = songinfoDic["bitrate"] as! [String:AnyObject]
@@ -224,7 +224,7 @@ class PlayerViewController: UIViewController {
         songlryAry.removeAll()
         
         let url = "http://tingapi.ting.baidu.com/v1/restserver/ting?method=baidu.ting.song.lry&songid=" + song_id
-        NetWorkManager.post(url: url) { (data) in
+        NetWorkManager.requestData(url: url) { (data) in
             var  songinfoDic = data as [String : AnyObject]  //歌曲信息字典
             let lrcContent = songinfoDic["lrcContent"] as! String  //歌词
             self.dealWithSonglry(lrcContent: lrcContent)

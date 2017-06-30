@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 class NetWorkManager: NSObject {
-    public class func post(url:String,result:@escaping ([NSString:AnyObject])->()){
+    public class func requestData(url:String,result:@escaping ([NSString:AnyObject])->()){
         Alamofire.request(url).responseJSON { (response) in
            result(response.result.value as! [NSString : AnyObject])
         }

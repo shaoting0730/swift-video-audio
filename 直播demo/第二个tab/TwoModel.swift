@@ -17,7 +17,7 @@ class TwoModel: NSObject {
     var author:String?  //作者
     static var songidAry:[String] = []   //songid数组
     class func loadData(OK: @escaping ([TwoModel])->()){
-        NetWorkManager.post(url: "http://tingapi.ting.baidu.com/v1/restserver/ting?method=baidu.ting.billboard.billList&type=22&size=20&offset=0") { (data) in
+        NetWorkManager.requestData(url: "http://tingapi.ting.baidu.com/v1/restserver/ting?method=baidu.ting.billboard.billList&type=22&size=20&offset=0") { (data) in
             let songAry = data["song_list"]
             let model  = dict2Model(list: songAry as! [[String : AnyObject]])
             OK(model)

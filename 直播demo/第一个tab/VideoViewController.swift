@@ -12,12 +12,13 @@ import SnapKit
 
 class VideoViewController: UIViewController {
     var  ijkPlayVC:IJKFFMoviePlayerController!
-    var stream_addr:String?  //视频地址
+    var stream_addr:String!  //视频地址
+    var viewBgImg:UIImageView!
     var portrait:String?  //背景图
-        {
+    {
         didSet{
             let url = URL.init(string: portrait!)
-            viewBgImg.sd_setImage(with: url)
+            viewBgImg?.sd_setImage(with: url)
         }
     }
     fileprivate lazy var backBtn:UIButton  = {
@@ -41,15 +42,8 @@ class VideoViewController: UIViewController {
         giftBtn.addTarget(self, action: #selector(VideoViewController.giftAction), for: .touchUpInside)
         return giftBtn
     }()
-    //虚化
-    fileprivate lazy var viewBgImg:UIImageView = UIImageView()
-    fileprivate lazy var viewBg:UIVisualEffectView = {
-        let blurEffect = UIBlurEffect.init(style: .light)
-        let effetView = UIVisualEffectView.init(effect: blurEffect)
-        effetView.frame = UIScreen.main.bounds
-        return effetView
-    }()
-    
+
+
     //点击返回按钮事件
     func backAction (){
         self.dismiss(animated: true, completion: nil)
@@ -67,7 +61,7 @@ class VideoViewController: UIViewController {
         btnAnime.keyTimes = [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0 ]
         btnAnime.duration = 0.2
         btn.layer.add(btnAnime, forKey: "SHOW")
-
+        
     }
     //点击礼物事件
     func giftAction(btn:UIButton) {
@@ -79,12 +73,12 @@ class VideoViewController: UIViewController {
         car.frame = CGRect.init(x: 0, y: 0, width: 0, height: 0)
         view.insertSubview(car, aboveSubview: ijkPlayVC.view)
         
-        UIView.animate(withDuration: duration, animations: { 
+        UIView.animate(withDuration: duration, animations: {
             car.frame = CGRect.init(x: self.view.center.x - carWidth/2, y: self.view.center.y - carHeight/2, width: carWidth, height: carHeight)
         }) { (true) in
             car.removeFromSuperview()
         }
-       //烟花特效
+        //烟花特效
         let layerFw = CAEmitterLayer()
         view.layer.addSublayer(layerFw)
         emmitParticles(from: btn.center, emitter: layerFw, in: view)
@@ -97,12 +91,18 @@ class VideoViewController: UIViewController {
         super.viewDidLoad()
         addSubView()
         addCons()
-      }
+    }
     //添加视图
     func addSubView(){
         //背景虚化
-        viewBgImg.addSubview(viewBg)
+        viewBgImg = UIImageView.init(frame: UIScreen.main.bounds)
+        let blurEffect = UIBlurEffect.init(style: .light)
+        let effetView = UIVisualEffectView.init(effect: blurEffect)
+        effetView.frame = UIScreen.main.bounds
+        viewBgImg.addSubview(effetView)
         self.view.addSubview(viewBgImg)
+        
+        
         //播放
         let url = URL.init(string: stream_addr!)
         ijkPlayVC = IJKFFMoviePlayerController.init(contentURL: url, with: nil)
@@ -110,11 +110,11 @@ class VideoViewController: UIViewController {
         self.view.addSubview(ijkPlayVC.view)
         ijkPlayVC.prepareToPlay()
         
-         //返回按钮
+        //返回按钮
         view.insertSubview(backBtn, aboveSubview: ijkPlayVC.view)
         view.insertSubview(heartBtn, aboveSubview: ijkPlayVC.view)
         view.insertSubview(giftBtn, aboveSubview: ijkPlayVC.view)
-
+        
     }
     //点击控件约束
     func  addCons() {

@@ -1,5 +1,5 @@
  # swift3.0-video-audio<br/>
- [ oc版本 ]( https://github.com/pheromone/OC-video-audio)  <br/>
+ [ oc版本请点我 ]( https://github.com/pheromone/OC-video-audio)  <br/>
  本项目采用swift3.0所写,适配iOS9.0+,所有界面均采用代码布局. <br/>
  第一个tab写的是简单直播,传统MVC模式,第二个tab写的是简单网络音乐播放器.传说MVVM模式(怎么看怎么不对) ,第三个tab只是一些杂类    <br/>
  # 采用的第三方 <br/>

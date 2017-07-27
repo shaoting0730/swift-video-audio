@@ -48,6 +48,18 @@ class ThreeViewController: UIViewController {
         btn6.setTitleColor(UIColor.red, for: .normal)
         btn6.addTarget(self, action: #selector(ThreeViewController.pageViewControllerAction), for: .touchUpInside)
         self.view.addSubview(btn6)
+        
+        let btn7  = UIButton.init(frame: CGRect.init(x: 0, y: 74 + 60 + 60 + 60, width: SCREENW * 0.5 - 5, height: 50))
+        btn7.setTitle("刮刮卡", for: .normal)
+        btn7.setTitleColor(UIColor.red, for: .normal)
+        btn7.addTarget(self, action: #selector(ThreeViewController.guaguakaControllerAction), for: .touchUpInside)
+        self.view.addSubview(btn7)
+        
+        let btn8  = UIButton.init(frame: CGRect.init(x: SCREENW * 0.5, y: 74 + 60 + 60 + 60, width: SCREENW * 0.5 - 5, height: 50))
+        btn8.setTitle("检测人脸并打码", for: .normal)
+        btn8.setTitleColor(UIColor.red, for: .normal)
+        btn8.addTarget(self, action: #selector(ThreeViewController.PixFaceAction), for: .touchUpInside)
+        self.view.addSubview(btn8)
 
     }
     
@@ -73,6 +85,14 @@ class ThreeViewController: UIViewController {
     
     func pageViewControllerAction(){
          self.navigationController?.pushViewController(PageViewController(), animated: false)
+    }
+    
+    func guaguakaControllerAction(){
+        self.navigationController?.pushViewController(GuaGuaKaViewController(), animated: false)
+    }
+    
+    func PixFaceAction(){
+       self.navigationController?.pushViewController(PixFaceViewController(), animated: false)
     }
     
     override func didReceiveMemoryWarning() {

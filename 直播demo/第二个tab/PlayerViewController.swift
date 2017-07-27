@@ -186,6 +186,9 @@ class PlayerViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
+        self.player.pause()
+        
+        
     }
     
     
@@ -201,16 +204,19 @@ class PlayerViewController: UIViewController {
             self.player = AVPlayer.init(url: URL.init(string: bitrate["file_link"] as! String)!)
             self.file_duration = bitrate["file_duration"] as! Int
             self.player.play()
-//            let time = self.player.addPeriodicTimeObserver(forInterval: CMTimeMake(Int64(1.0), Int32(1.0)), queue: DispatchQueue.main, using: { (time) in
-//                let current = CMTimeGetSeconds(time)
-//                let currentD = current as! Double
-//                for  dic in self.songlryAry{
-//                    let total = dic["total"] as! Double
-//                    if(currentD >= total){
-//                        print("歌词该动额")
-//                        }
-//                }
-//            })
+            let time = self.player.addPeriodicTimeObserver(forInterval: CMTimeMake(Int64(1.0), Int32(1.0)), queue: DispatchQueue.main, using: { (time) in
+                let current = CMTimeGetSeconds(time)
+                let currentD = current as! Double
+                print("currentD\(currentD)")
+                
+                for  dic in self.songlryAry{
+//                    print("total\(dic["total"] as! Double)"),,,,,r
+                    let total = dic["total"] as! Double
+                    if(currentD >= total){
+                        print("歌词该动额")
+                        }
+                }
+            })
         }
     }
     

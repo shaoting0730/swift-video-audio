@@ -63,8 +63,7 @@
  ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/%E5%88%86%E9%A1%B5%E6%8E%A7%E5%88%B6%E5%99%A8.gif) <br/>
  ## 6.刮刮卡 <br/>
 感谢    *  [ 航歌 ]( http://www.hangge.com/blog/cache/detail_1660.html)   <br/>
- ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/%E5%88%AE%E5%88%AE%E5%8D%A1.png) <br/>
- 
-  ## 7.检测人脸并打码 <br/>
+ ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/%E5%88%AE%E5%88%AE%E5%8D%A1.png) 
+## 7.检测人脸并打码 <br/>
 感谢    *  [ 航歌 ]( http://www.hangge.com/blog/cache/detail_907.html)   <br/>
  ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/%E6%A3%80%E6%B5%8B%E4%BA%BA%E8%84%B8%E5%B9%B6%E6%89%93%E7%A0%81.png) <br/>

@@ -64,15 +64,15 @@
  ## 6.刮刮卡 <br/>
 感谢    *  [ 航歌 ]( http://www.hangge.com/blog/cache/detail_1660.html)   <br/>
  ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/%E5%88%AE%E5%88%AE%E5%8D%A1.png) 
-## 7.检测人脸并打码 <br/>
+## 7.检测人脸并打码 
 感谢    *  [ 航歌 ]( http://www.hangge.com/blog/cache/detail_907.html)   <br/>
  ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/%E6%A3%80%E6%B5%8B%E4%BA%BA%E8%84%B8%E5%B9%B6%E6%89%93%E7%A0%81.png) <br/>
- ## 8.启动图渐隐效果 <br/>
+ ## 8.启动图渐隐效果
 感谢    *  [ 航歌 ]( http://www.hangge.com/blog/cache/detail_1246.html)   <br/>
  ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/launchImg0.png) 
  ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/launchImg1.png)
  ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/launchImg2.png)
  <br/>
-  ## 9.国际化 <br/>
+## 9.国际化 
 感谢    *  [ VV木公子 ]( http://www.jianshu.com/p/88c1b65e3ddb)   <br/>
  <br/>

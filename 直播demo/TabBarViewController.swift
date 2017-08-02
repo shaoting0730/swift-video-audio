@@ -14,10 +14,10 @@ class TabBarViewController: UITabBarController {
         //播放启动画面动画
         launchAnimation()
 
-        
-         addChildVCandRootVC(navTitle: "直播列表", tabTitle: "直播", rootVC: OneViewController(),img: #imageLiteral(resourceName: "1_"),img_selected: #imageLiteral(resourceName: "1_selected"))
-         addChildVCandRootVC(navTitle: "歌曲列表", tabTitle: "歌曲", rootVC: TwoViewController(),img: #imageLiteral(resourceName: "2_"),img_selected: #imageLiteral(resourceName: "2_selected"))
-         addChildVCandRootVC(navTitle: "Other", tabTitle: "其他", rootVC: ThreeViewController(),img: #imageLiteral(resourceName: "3_"),img_selected: #imageLiteral(resourceName: "3_selected"))
+        //添加tabBar NavigationBar 国际化
+         addChildVCandRootVC(navTitle: NSLocalizedString("videoList", comment: "") ,tabTitle: NSLocalizedString("video", comment: ""), rootVC: OneViewController(),img: #imageLiteral(resourceName: "1_"),img_selected: #imageLiteral(resourceName: "1_selected"))
+         addChildVCandRootVC(navTitle:NSLocalizedString("audioList", comment: ""), tabTitle: NSLocalizedString("audio", comment: ""), rootVC: TwoViewController(),img: #imageLiteral(resourceName: "2_"),img_selected: #imageLiteral(resourceName: "2_selected"))
+         addChildVCandRootVC(navTitle: NSLocalizedString("other", comment: ""), tabTitle: NSLocalizedString("other", comment: ""), rootVC: ThreeViewController(),img: #imageLiteral(resourceName: "3_"),img_selected: #imageLiteral(resourceName: "3_selected"))
     }
     
     //播放启动画面动画

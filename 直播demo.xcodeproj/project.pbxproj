@@ -28,6 +28,8 @@
 		6C26BED91E84FC88003A7478 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C26BED81E84FC88003A7478 /* UIKit.framework */; };
 		6C26BEDB1E84FC90003A7478 /* VideoToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C26BEDA1E84FC90003A7478 /* VideoToolbox.framework */; };
 		6C726D761E84AC7C005B9063 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C726D751E84AC7C005B9063 /* UserModel.swift */; };
+		6C7740B81F3179DB00602665 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C7740BA1F3179DB00602665 /* InfoPlist.strings */; };
+		6C7740C01F317BA000602665 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C7740C21F317BA000602665 /* Localizable.strings */; };
 		6C8452991EE68C6800E1AA66 /* liwushuo.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C84528B1EE68C6800E1AA66 /* liwushuo.json */; };
 		6C84529A1EE68C6800E1AA66 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C84528D1EE68C6800E1AA66 /* CategoryModel.swift */; };
 		6C84529B1EE68C6800E1AA66 /* food.json in Resources */ = {isa = PBXBuildFile; fileRef = 6C84528E1EE68C6800E1AA66 /* food.json */; };
@@ -114,6 +116,10 @@
 		6C26BED81E84FC88003A7478 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6C26BEDA1E84FC90003A7478 /* VideoToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = VideoToolbox.framework; path = System/Library/Frameworks/VideoToolbox.framework; sourceTree = SDKROOT; };
 		6C726D751E84AC7C005B9063 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		6C7740B91F3179DB00602665 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6C7740BB1F3179DC00602665 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		6C7740C11F317BA000602665 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		6C7740C31F317BA400602665 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		6C84528B1EE68C6800E1AA66 /* liwushuo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = liwushuo.json; sourceTree = "<group>"; };
 		6C84528D1EE68C6800E1AA66 /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		6C84528E1EE68C6800E1AA66 /* food.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = food.json; sourceTree = "<group>"; };
@@ -385,6 +391,8 @@
 				6CD061F11E811EB80001FC76 /* Info.plist */,
 				6CD062131E81202C0001FC76 /* TabBarViewController.swift */,
 				6CA7B8DD1E88992D00C1095F /* brige.h */,
+				6C7740BA1F3179DB00602665 /* InfoPlist.strings */,
+				6C7740C21F317BA000602665 /* Localizable.strings */,
 			);
 			path = "直播demo";
 			sourceTree = "<group>";
@@ -566,6 +574,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 6CD061D91E811EB80001FC76;
 			productRefGroup = 6CD061E31E811EB80001FC76 /* Products */;
@@ -585,7 +594,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6CD061ED1E811EB80001FC76 /* Assets.xcassets in Resources */,
+				6C7740B81F3179DB00602665 /* InfoPlist.strings in Resources */,
 				6C84529B1EE68C6800E1AA66 /* food.json in Resources */,
+				6C7740C01F317BA000602665 /* Localizable.strings in Resources */,
 				6C8452991EE68C6800E1AA66 /* liwushuo.json in Resources */,
 				6C04DDFF1EE503AF00700313 /* start.mp3 in Resources */,
 				6C84529E1EE68C6800E1AA66 /* meituan.json in Resources */,
@@ -737,11 +748,33 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		6C7740BA1F3179DB00602665 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6C7740B91F3179DB00602665 /* en */,
+				6C7740BB1F3179DC00602665 /* zh-Hans */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		6C7740C21F317BA000602665 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6C7740C11F317BA000602665 /* en */,
+				6C7740C31F317BA400602665 /* zh-Hans */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		6CD062081E811EB80001FC76 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -792,6 +825,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

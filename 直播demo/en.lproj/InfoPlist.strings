@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  直播demo
+
+  Created by Shaoting Zhou on 2017/8/2.
+  Copyright © 2017年 Shaoting Zhou. All rights reserved.
+*/
+// Localizable App Name是App在英语环境环境下显示的名称
+CFBundleDisplayName = "pheromone";

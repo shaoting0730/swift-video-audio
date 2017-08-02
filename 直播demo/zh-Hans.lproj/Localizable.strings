@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  直播demo
+
+  Created by Shaoting Zhou on 2017/8/2.
+  Copyright © 2017年 Shaoting Zhou. All rights reserved.
+*/
+"videoList" = "直播列表";
+"video" = "直播";
+"audioList" = "歌曲列表";
+"audio" = "歌曲";
+"other" = "其他";

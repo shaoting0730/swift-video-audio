@@ -73,3 +73,6 @@
  ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/launchImg1.png)
  ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/launchImg2.png)
  <br/>
+  ## 9.国际化 <br/>
+感谢    *  [ VV木公子 ]( http://www.jianshu.com/p/88c1b65e3ddb)   <br/>
+ <br/>

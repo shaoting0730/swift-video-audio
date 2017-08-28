@@ -22,7 +22,7 @@ class TabBarViewController: UITabBarController {
          addChildVCandRootVC(navTitle: NSLocalizedString("other", comment: ""), tabTitle: NSLocalizedString("other", comment: ""), rootVC: ThreeViewController(),img: #imageLiteral(resourceName: "3_"),img_selected: #imageLiteral(resourceName: "3_selected"))
     }
     
-    //播放启动画面动画
+    //播放广告页面
     private func launchAnimation() {
         let statusBarOrientation = UIApplication.shared.statusBarOrientation
         if let imgg = splashImageForOrientation(statusBarOrientation,
@@ -34,7 +34,7 @@ class TabBarViewController: UITabBarController {
                 let url:URL = URL.init(string: imgAry[index])!
                 img = try UIImage.init(data: Data.init(contentsOf: url))!
             } catch  {
-                img  = UIImage.init(named: imgg)
+                img  = UIImage.init(named: imgg)  //如果没有网络播放启动页面
             }
             
             //获取启动图片

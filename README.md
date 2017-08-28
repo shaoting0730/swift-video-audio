@@ -76,7 +76,8 @@
 感谢    *  [ VV木公子 ]( http://www.jianshu.com/p/88c1b65e3ddb)   <br/>
  <br/>
  ## 9.修改数字键盘
+ 感谢    *  [ 航歌 ]( http://www.hangge.com/blog/cache/detail_1419.html)   <br/>
   ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/%E6%95%B0%E5%AD%97%E9%94%AE%E7%9B%98.png) 
-感谢    *  [ 航歌 ]( http://www.hangge.com/blog/cache/detail_1419.html)   <br/>
+
  <br/>
  

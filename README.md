@@ -67,12 +67,16 @@
 ## 7.检测人脸并打码 
 感谢    *  [ 航歌 ]( http://www.hangge.com/blog/cache/detail_907.html)   <br/>
  ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/%E6%A3%80%E6%B5%8B%E4%BA%BA%E8%84%B8%E5%B9%B6%E6%89%93%E7%A0%81.png) <br/>
- ## 8.启动图渐隐效果
+ ## 8.广告页面渐隐效果 + 广告页面
 感谢    *  [ 航歌 ]( http://www.hangge.com/blog/cache/detail_1246.html)   <br/>
- ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/launchImg0.png) 
- ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/launchImg1.png)
- ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/launchImg2.png)
+ ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/%E5%B9%BF%E5%91%8A%E9%A1%B5%E9%9D%A2.png) 
+ ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/%E5%B9%BF%E5%91%8A%E9%80%90%E6%B8%90%E9%9A%90%E8%97%8F.png) 
  <br/>
 ## 9.国际化 
 感谢    *  [ VV木公子 ]( http://www.jianshu.com/p/88c1b65e3ddb)   <br/>
  <br/>
+ ## 9.修改数字键盘
+  ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/%E6%95%B0%E5%AD%97%E9%94%AE%E7%9B%98.png) 
+感谢    *  [ 航歌 ]( http://www.hangge.com/blog/cache/detail_1419.html)   <br/>
+ <br/>
+ 

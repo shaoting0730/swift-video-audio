@@ -60,6 +60,12 @@ class ThreeViewController: UIViewController {
         btn8.setTitleColor(UIColor.red, for: .normal)
         btn8.addTarget(self, action: #selector(ThreeViewController.PixFaceAction), for: .touchUpInside)
         self.view.addSubview(btn8)
+        
+        let btn9  = UIButton.init(frame: CGRect.init(x: 0, y: 74 + 60 + 60 + 60 + 60, width: SCREENW * 0.5 - 5, height: 50))
+        btn9.setTitle("数字键盘", for: .normal)
+        btn9.setTitleColor(UIColor.red, for: .normal)
+        btn9.addTarget(self, action: #selector(ThreeViewController.numberKeyboardAction), for: .touchUpInside)
+        self.view.addSubview(btn9)
 
     }
     
@@ -93,6 +99,10 @@ class ThreeViewController: UIViewController {
     
     func PixFaceAction(){
        self.navigationController?.pushViewController(PixFaceViewController(), animated: false)
+    }
+    
+    func numberKeyboardAction(){
+        self.navigationController?.pushViewController(NumberpadViewController(), animated: false)
     }
     
     override func didReceiveMemoryWarning() {

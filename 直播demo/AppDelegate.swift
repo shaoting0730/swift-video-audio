@@ -19,8 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = UIColor.white
         window?.rootViewController = TabBarViewController()
         window?.makeKeyAndVisible()
-        
-        
+        Thread.sleep(forTimeInterval: 1)
         return true
     }
 

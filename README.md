@@ -78,6 +78,13 @@
  ## 9.修改数字键盘
  感谢    *  [ 航歌 ]( http://www.hangge.com/blog/cache/detail_1419.html)   <br/>
   ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/%E6%95%B0%E5%AD%97%E9%94%AE%E7%9B%98.png) 
+## 10.   iOS10.3后修改icon
+ 感谢    *  [ iOS 10.3 如何更换 app 图标 ]( http://www.jianshu.com/p/f6f328123923)   <br/>
+  ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/%E4%BF%AE%E6%94%B9icon.png)
+  ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/icon1.png)
+  ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/icon2.png)
+  
+
 
  <br/>
  

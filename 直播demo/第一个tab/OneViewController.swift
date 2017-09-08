@@ -34,6 +34,7 @@ class OneViewController: UIViewController {
             self.oneModel = data
             self.tableView.reloadData()
         }
+        
         // Do any additional setup after loading the view.
     }
     
@@ -81,4 +82,6 @@ extension OneViewController:UITableViewDelegate,UITableViewDataSource,AVAudioPla
     }
 
 }
+
+
 

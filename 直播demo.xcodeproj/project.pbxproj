@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		606CCC977100E94BA88B47C5 /* Pods___demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 253E7DC0E2E5CC585B4CA6AB /* Pods___demo.framework */; };
+		6C01EE571F62336500DCBAA5 /* otherIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C01EE551F62336500DCBAA5 /* otherIcon@2x.png */; };
+		6C01EE581F62336500DCBAA5 /* otherIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C01EE561F62336500DCBAA5 /* otherIcon@3x.png */; };
 		6C04DDFF1EE503AF00700313 /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6C04DDFE1EE503AF00700313 /* start.mp3 */; };
 		6C04DE051EE538F100700313 /* ThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C04DE041EE538F100700313 /* ThreeViewController.swift */; };
 		6C0C88A31E836F0400A185B5 /* OneModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0C88A21E836F0400A185B5 /* OneModel.swift */; };
@@ -97,6 +99,8 @@
 		0588688EFDC96D4B7892D934 /* Pods-直播demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-直播demo.release.xcconfig"; path = "Pods/Target Support Files/Pods-直播demo/Pods-直播demo.release.xcconfig"; sourceTree = "<group>"; };
 		06A3BD817F22F03257008175 /* Pods-直播demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-直播demo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-直播demo/Pods-直播demo.debug.xcconfig"; sourceTree = "<group>"; };
 		253E7DC0E2E5CC585B4CA6AB /* Pods___demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods___demo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C01EE551F62336500DCBAA5 /* otherIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "otherIcon@2x.png"; sourceTree = "<group>"; };
+		6C01EE561F62336500DCBAA5 /* otherIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "otherIcon@3x.png"; sourceTree = "<group>"; };
 		6C04DDFE1EE503AF00700313 /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start.mp3; sourceTree = "<group>"; };
 		6C04DE041EE538F100700313 /* ThreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ThreeViewController.swift; path = "第三个tab/ThreeViewController.swift"; sourceTree = "<group>"; };
 		6C0C88A21E836F0400A185B5 /* OneModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneModel.swift; sourceTree = "<group>"; };
@@ -215,9 +219,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6C01EE501F622EA200DCBAA5 /* otherIcon */ = {
+			isa = PBXGroup;
+			children = (
+				6C01EE551F62336500DCBAA5 /* otherIcon@2x.png */,
+				6C01EE561F62336500DCBAA5 /* otherIcon@3x.png */,
+			);
+			name = otherIcon;
+			path = "第三个tab/otherIcon";
+			sourceTree = "<group>";
+		};
 		6C04DDF61EE5026600700313 /* 第三个tab */ = {
 			isa = PBXGroup;
 			children = (
+				6C01EE501F622EA200DCBAA5 /* otherIcon */,
 				6C2A00BE1F53A1A500A34A16 /* 数字键盘 */,
 				6CC39C1F1F29D6B9001F7FF6 /* 检测人脸并打码 */,
 				6CC39C151F29CA50001F7FF6 /* 刮刮卡 */,
@@ -605,7 +620,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6C01EE571F62336500DCBAA5 /* otherIcon@2x.png in Resources */,
 				6CD061ED1E811EB80001FC76 /* Assets.xcassets in Resources */,
+				6C01EE581F62336500DCBAA5 /* otherIcon@3x.png in Resources */,
 				6C7740B81F3179DB00602665 /* InfoPlist.strings in Resources */,
 				6C84529B1EE68C6800E1AA66 /* food.json in Resources */,
 				6C7740C01F317BA000602665 /* Localizable.strings in Resources */,

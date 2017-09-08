@@ -48,6 +48,7 @@ class TabBarViewController: UITabBarController {
             goHomeBtn.addTarget(self, action: #selector(self.goHomeViewAction), for: .touchUpInside)
             
             
+            
             //将图片添加到视图上（分两种情况）
             //情况1:没有导航栏
             self.view.addSubview(launchview)
@@ -157,3 +158,5 @@ class TabBarViewController: UITabBarController {
     */
 
 }
+
+

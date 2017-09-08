@@ -66,6 +66,12 @@ class ThreeViewController: UIViewController {
         btn9.setTitleColor(UIColor.red, for: .normal)
         btn9.addTarget(self, action: #selector(ThreeViewController.numberKeyboardAction), for: .touchUpInside)
         self.view.addSubview(btn9)
+        
+        let btn10  = UIButton.init(frame: CGRect.init(x: SCREENW * 0.5, y: 74 + 60 + 60 + 60 + 60, width: SCREENW * 0.5 - 5, height: 50))
+        btn10.setTitle("iOS10.3后修改icon", for: .normal)
+        btn10.setTitleColor(UIColor.red, for: .normal)
+        btn10.addTarget(self, action: #selector(ThreeViewController.changeIcon), for: .touchUpInside)
+        self.view.addSubview(btn10)
 
     }
     
@@ -104,6 +110,37 @@ class ThreeViewController: UIViewController {
     func numberKeyboardAction(){
         self.navigationController?.pushViewController(NumberpadViewController(), animated: false)
     }
+    
+    func changeIcon(){
+        if #available(iOS 10.3, *) {
+            if UIApplication.shared.supportsAlternateIcons {
+                print("you can change this app's icon")
+            }else {
+                print("you cannot change this app's icon")
+                return
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+        
+        if #available(iOS 10.3, *) {
+            if let name = UIApplication.shared.alternateIconName {
+                // CHANGE TO PRIMARY ICON
+                UIApplication.shared.setAlternateIconName(nil) { (err:Error?) in
+                    print("set icon error：\(String(describing: err))")
+                }
+                print("the alternate icon's name is \(name)")
+            }else {
+                // CHANGE TO ALTERNATE ICON
+                UIApplication.shared.setAlternateIconName("otherIcon") { (err:Error?) in
+                    print("set icon error：\(String(describing: err))")
+                }
+            }
+        } else {
+            // Fallback on earlier versions
+        }
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

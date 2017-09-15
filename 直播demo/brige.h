@@ -7,3 +7,5 @@
 //
 #import "DMHeartFlyView.h"
 
+#import "BulletManager.h"
+#import "BulletView.h"

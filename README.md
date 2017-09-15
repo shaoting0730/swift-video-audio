@@ -26,8 +26,7 @@
  
  #效果截图:<br/>
  ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/video1.png) <br/>
- ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/video2.png) <br/>
- ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/video3.png) <br/>
+ ![image](https://github.com/pheromone/swift-video-audio/blob/master/%E6%88%AA%E5%9B%BE/video2.gif) <br/>
  <br/>
  
  ----
